@@ -1,0 +1,19 @@
+{
+  "name": "lendhome",
+  "version": "1.0.0",
+  "description": "LendHome",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Punith8304/lendhome.git"
+  },
+  "author": "Punith",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Punith8304/lendhome/issues"
+  },
+  "homepage": "https://github.com/Punith8304/lendhome#readme"
+}
