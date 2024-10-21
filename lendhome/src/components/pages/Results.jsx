@@ -49,7 +49,9 @@ function propertyCard() {
         <div style={{display: "flex"}}>
             <img style={{ height: "20%", width: "20%", margin: "1.5rem" }} src="https://media.istockphoto.com/id/1255835530/photo/modern-custom-suburban-home-exterior.jpg?s=612x612&w=0&k=20&c=0Dqjm3NunXjZtWVpsUvNKg2A4rK2gMvJ-827nb4AMU4=" alt="house-img" />
             <div style={{border: "1px grey solid", borderStyle: "double", margin: "1.5"}}>
-
+                <div>
+                    
+                </div>
             </div>
         </div>
 
