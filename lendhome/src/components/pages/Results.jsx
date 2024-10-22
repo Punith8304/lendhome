@@ -50,7 +50,7 @@ function propertyCard() {
             <img style={{ height: "20%", width: "20%", margin: "1.5rem" }} src="https://media.istockphoto.com/id/1255835530/photo/modern-custom-suburban-home-exterior.jpg?s=612x612&w=0&k=20&c=0Dqjm3NunXjZtWVpsUvNKg2A4rK2gMvJ-827nb4AMU4=" alt="house-img" />
             <div className="house-card-details" style={ {margin: "1.5"}}>
                 <div style={{display: "flex", marginBottom: "3rem"}}>
-                    <div style={resultStyle}>
+                    <div style={{borderRight: "solid 1px black"}}>
                         <h3>
                             Furnished
                         </h3>
@@ -58,7 +58,7 @@ function propertyCard() {
                             Furnishing
                         </p>
                     </div>
-                    <div style={{...resultStyle, border: "none"}}>
+                    <div style={{boder}}>
                         <h3>2 BHK</h3>
                         <p>Apartment Type</p>
                     </div>
