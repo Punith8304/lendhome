@@ -56,7 +56,6 @@ function propertyCard() {
                         </h3>
                         <p>
                             Furnishing
-                            add
                         </p>
                     </div>
                     <div style={{boder}}>
