@@ -5,13 +5,13 @@ function Results() {
     </div>
 }
 const resultStyle = {
-    paddingRight: "5rem",
-    paddingLeft: "5rem",
+    paddingRight: "4rem",
+    paddingLeft: "4rem",
     borderRight: "solid 1px black"
 }
 function propertyCard() {
     return <div style={{ border: "1px solid black" }}>
-        <div>
+        <div style={{marginLeft: "1.5rem"}}>
             <h3>
                 <a href="/result?house=2bhk">2BHK House for rent in Gachibowli</a>
             </h3>
@@ -19,8 +19,8 @@ function propertyCard() {
                 Independent House, TNGOS colony
             </p>
         </div>
-        <div style={{ display: "flex", border: "1px solid black", width: "fit-content", padding: "2rem 0" }}>
-            <div style={resultStyle}>
+        <div style={{ display: "flex", border: "1px solid black", width: "fit-content", padding: "1.5rem 2rem", marginLeft: "1.5rem"}}>
+            <div style={{borderRight: "solid 1px black", padding: "0 5rem"}}>
                 <p>
                     25000
                 </p>
@@ -28,7 +28,7 @@ function propertyCard() {
                     rent-negotiable
                 </p>
             </div>
-            <div style={resultStyle}>
+            <div style={{borderRight: "solid 1px black", padding: "0 5rem"}}>
                 <p>
                     75000
                 </p>
@@ -36,7 +36,7 @@ function propertyCard() {
                     deposit
                 </p>
             </div>
-            <div style={{...resultStyle, borderRight: "none"}}>
+            <div style={{ padding: "0 5rem"}}>
                 <p>
                     1000sqft
                 </p>
@@ -47,33 +47,33 @@ function propertyCard() {
 
         </div>
         <div style={{display: "flex"}}>
-            <img style={{ height: "20%", width: "20%", margin: "1.5rem" }} src="https://media.istockphoto.com/id/1255835530/photo/modern-custom-suburban-home-exterior.jpg?s=612x612&w=0&k=20&c=0Dqjm3NunXjZtWVpsUvNKg2A4rK2gMvJ-827nb4AMU4=" alt="house-img" />
-            <div className="house-card-details" style={ {margin: "1.5"}}>
-                <div style={{display: "flex", marginBottom: "3rem"}}>
-                    <div style={{borderRight: "solid 1px black"}}>
-                        <h3>
+            <img style={{ height: "20%", width: "20%", margin: "1.5rem 1rem 1.5rem 1.5rem" }} src="https://media.istockphoto.com/id/1255835530/photo/modern-custom-suburban-home-exterior.jpg?s=612x612&w=0&k=20&c=0Dqjm3NunXjZtWVpsUvNKg2A4rK2gMvJ-827nb4AMU4=" alt="house-img" />
+            <div className="house-card-details" style={{margin: "1.5", marginLeft: "1rem"}}>
+                <div style={{display: "flex", paddingBottom: "1rem", borderBottom: "1px solid black"}}>
+                    <div style={resultStyle}>
+                        <h4>
                             Furnished
-                        </h3>
+                        </h4>
                         <p>
                             Furnishing
                         </p>
                     </div>
-                    <div style={{boder}}>
-                        <h3>2 BHK</h3>
+                    <div style={{...resultStyle, border: "none"}}>
+                        <h4>2 BHK</h4>
                         <p>Apartment Type</p>
                     </div>
                 </div>
-                <div style={{display: "flex"}}>
+                <div style={{display: "flex", paddingTop: "1rem"}}>
                     <div style={resultStyle}>
-                        <h3>
+                        <h4>
                             Family
-                        </h3>
+                        </h4>
                         <p>
                             Preferred Tenants
                         </p>
                     </div>
                     <div style={{...resultStyle, border: "none"}}>
-                        <h3>22-10-2024</h3>
+                        <h4>22-10-2024</h4>
                         <p>Available from</p>
                     </div>
                 </div>
