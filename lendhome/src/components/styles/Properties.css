@@ -64,3 +64,16 @@ textarea:focus {
 #rent-money, #bhk-type, #floor, #property-age, #city, #rent-amount, #bathroom, #balcony, #start-schedule {
     margin-right: 70px;
 }
+.house-card-details {
+    padding: 2rem 0;
+    width: fit-content;
+    height: fit-content;
+    border: double black;
+    margin: 1.5rem;
+}
+.house-card-details p {
+    font-size: small;
+}
+.house-card-details div div {
+    width: 50%;
+}
