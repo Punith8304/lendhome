@@ -6,7 +6,6 @@ import Button from '@mui/material/Button';
 const pages = ["property", "locality", "rental", "amenities", "gallery", "schedule"]
 function PropertyDetails() {
     const [page, setPage] = useState("property")
-
     function handleClick(name) {
         setPage(name)
     }
@@ -27,14 +26,14 @@ function NextPage() {
     const location = useLocation();
     const navigate = useNavigate();
     const currentPage = location.pathname.split("/").pop();
-
     function handleSubmit() {
         console.log("submitted successfully")
     }
     function handleNextPageClick() {
         const currentPage = location.pathname.split("/").pop();
-        const nextIndex = pages.indexOf(currentPage)+1
-        navigate(`owner/rent/${pages[nextIndex]}`)
+        const nextIndex = pages.indexOf(currentPage)+1;
+        console.log(currentPage)
+        navigate(`/owner/rent/${pages[nextIndex]}`)
     }
     return <div className="details-submit-button">
         {currentPage === "schedule" ? (
@@ -44,6 +43,5 @@ function NextPage() {
         )}
     </div>
 }
-
 export default PropertyDetails
 export { NextPage }

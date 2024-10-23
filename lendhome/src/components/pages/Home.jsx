@@ -39,7 +39,7 @@ function Home() {
             </h2>
             <div className="input-city">
                 <select name="cityRent" id="cityRent">
-                    <option value="" disabled selected>Select city</option>
+                    <option value="" defaultChecked>Select city</option>
                     <option value="hyderbad">Hyderabad</option>
                     <option value="banglore">Banglore</option>
                     <option value="delhi">Delhi</option>

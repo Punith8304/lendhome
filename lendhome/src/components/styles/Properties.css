@@ -33,7 +33,6 @@
 #secondary-number::-webkit-inner-spin-button {
     -webkit-appearance: none;
 }
-
 #rent, #lease, #rent-negotiable, #yes, #no, .available-amenities input {
     margin-left: 50px;
 }
@@ -55,7 +54,6 @@
 textarea:focus {
     outline: none;
 }
-
 #everyday, #weekday, #weekend {
     white-space: pre;
     padding: 2rem;
@@ -79,7 +77,4 @@ textarea:focus {
 .house-card-details div div {
     width: 50%;
     padding: 1rem auto;
-}
-.details-submit-button {
-    
 }
