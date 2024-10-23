@@ -1,52 +1,49 @@
-import React, { useEffect } from "react";
-import Property from "../details/Property.jsx";
-import Locality from "../details/Locality.jsx";
-import Rental from "../details/Rental.jsx"
-import Gallery from "../details/Gallery.jsx"
-import Amenities from "../details/Amenities.jsx"
-import Schedule from "../details/Schedule.jsx"
+import React, { useEffect, useState } from "react";
 import "../../styles/Properties.css";
-import { Route, NavLink } from "react-router-dom"
+import { Route, NavLink, useLocation } from "react-router-dom"
 import { useNavigate } from "react-router-dom"
+import Button from '@mui/material/Button';
+const pages = ["property", "locality", "rental", "amenities", "gallery", "schedule"]
 function PropertyDetails() {
-    // const navigate = useNavigate("property")
-    // const [name, setName] = React.useState()
-    // async function handlePropertyDetail(pageName) {
-    //     setName(pageName)
-    //     return navigate("/owner/Rent/" + pageName)
-    // }
+    const [page, setPage] = useState("property")
+
+    function handleClick(name) {
+        setPage(name)
+    }
     return <div className="property-page">
         <div>
-        <div>
-        property details
-
-        <div className="details-property"  >
-            <NavLink to="/owner/rent/property" className="property-button" >
-                Property Details
-            </NavLink>
-            <NavLink to="/owner/rent/locality" className="property-button" >
-                Locality Details
-            </NavLink>
-            <NavLink to="/owner/rent/rental" className="property-button" >
-                Rental Details
-            </NavLink>
-            <NavLink to="/owner/rent/amenities" className="property-button" >
-                Amenities
-            </NavLink>
-            <NavLink to="/owner/rent/gallery" className="property-button" >
-                Gallery
-            </NavLink>
-            <NavLink to="/owner/rent/schedule" className="property-button" >
-                Schedule
-            </NavLink>
-
-        </div>
-    </div>
-
-        </div>
-        <div>
-            
+            property details
+            <div className="details-property"  >
+                {pages.map((pg) => {
+                    return <NavLink to={`/owner/rent/${pg}`} className="property-button" onClick={() => handleClick(pg)}>
+                        {pg.charAt(0).toUpperCase() + pg.slice(1)}
+                    </NavLink>
+                })}
+            </div>
         </div>
     </div>
 }
+function NextPage() {
+    const location = useLocation();
+    const navigate = useNavigate();
+    const currentPage = location.pathname.split("/").pop();
+
+    function handleSubmit() {
+        console.log("submitted successfully")
+    }
+    function handleNextPageClick() {
+        const currentPage = location.pathname.split("/").pop();
+        const nextIndex = pages.indexOf(currentPage)+1
+        navigate(`owner/rent/${pages[nextIndex]}`)
+    }
+    return <div className="details-submit-button">
+        {currentPage === "schedule" ? (
+            <Button variant="contained" onClick={handleSubmit}>Save</Button>
+        ) : (
+            <Button variant="contained" onClick={handleNextPageClick}>Save & Next</Button>
+        )}
+    </div>
+}
+
 export default PropertyDetails
+export { NextPage }

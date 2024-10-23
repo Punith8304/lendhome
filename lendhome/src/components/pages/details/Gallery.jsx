@@ -11,14 +11,14 @@ function Gallery() {
         console.log("submitted successfully")
     }
     return <div>
-        <p style={{"margin-bottom": "1rem"}}>
+        <p style={{marginBottom: "1rem"}}>
             Upload photos
         </p>
         <div>
-            <p style={{"margin-bottom": "1rem"}}>
+            <p style={{marginBottom: "1rem"}}>
                 Add photos to get 5x more responses
             </p>
-            <p style={{"margin-bottom": "1rem"}}>
+            <p style={{marginBottom: "1rem"}}>
                 90% of tenants contact on properties with photos.
             </p>
             <input id="file-input" name="file-input" type="file" onChange={handleChange}/>

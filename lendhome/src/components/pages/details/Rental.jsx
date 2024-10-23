@@ -8,7 +8,7 @@ function Rental() {
             Property available for 
         </div>
         <div>
-            <input type="radio" name="rentType" id="rent" value="rent" checked />
+            <input type="radio" name="rentType" id="rent" value="rent" defaultChecked />
             <label htmlFor="rent">Rent</label>
             <input type="radio" name="rentType" id="lease" value="lease" />
             <label htmlFor="lease">Lease</label>
@@ -30,7 +30,6 @@ function Rental() {
         <div>
             <label htmlFor="monthly-maintenance">Monthly Maintenance*</label>
              <select name="monthly-maintenance" defaultValue="Select" id="monthly-maintenance">
-                {/* <option value="" disabled >Select*</option> */}
                 <option value="included">Maintenace Included</option>
                 <option value="extra">Maintenace Extra</option>
              </select>
@@ -42,7 +41,7 @@ function Rental() {
         </div>
         <div>
             <p>Preferred Tenants*</p>
-            <input type="checkbox" id="anyone" name="anyone" value="Anyone" checked/>
+            <input type="checkbox" id="anyone" name="anyone" value="Anyone" defaultChecked/>
             <label htmlFor="anyone">Anyone</label>
             <input type="checkbox" id="family" name="family" value="Family"/>
             <label htmlFor="family">Family</label>
