@@ -14,7 +14,7 @@ function locality() {
             <option value="Pune">Pune</option>
         </select>
         <label htmlFor="locality">Locality*</label>
-        <input type="text" name="locality" id="locality" placeholder="Enter Location/Society name"/>
+        <input type="text" name="locality" id="locality" placeholder="Enter Area/Society name"/>
         </div>
         <div>
             <label htmlFor="landmark">Landmark/Street*</label>

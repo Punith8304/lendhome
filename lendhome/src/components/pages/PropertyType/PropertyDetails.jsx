@@ -6,15 +6,12 @@ import Button from '@mui/material/Button';
 const pages = ["property", "locality", "rental", "amenities", "gallery", "schedule"]
 function PropertyDetails() {
     const [page, setPage] = useState("property")
-    function handleClick(name) {
-        setPage(name)
-    }
     return <div className="property-page">
         <div>
             property details
             <div className="details-property"  >
                 {pages.map((pg) => {
-                    return <NavLink to={`/owner/rent/${pg}`} className="property-button" onClick={() => handleClick(pg)}>
+                    return <NavLink to={`/owner/rent/${pg}`} className="property-button" >
                         {pg.charAt(0).toUpperCase() + pg.slice(1)}
                     </NavLink>
                 })}

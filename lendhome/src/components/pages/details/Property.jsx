@@ -5,7 +5,7 @@ function Property() {
     <div>
         <label htmlFor="apartment-type">Apartment Type*</label>
         <select name="apartment-type" id="apartment-type">
-            <option value="independentHouse">Independent HOuse/Villa</option>
+            <option value="independentHouse">Independent House/Villa</option>
             <option value="house">House</option>
             <option value="apartment">Apartment</option>
         </select>
@@ -15,8 +15,10 @@ function Property() {
         <label htmlFor="bhk-type">BHK Type*</label>
         <select name="bhk-type" id="bhk-type">
             <option value="RHK">RHK</option>
-            <option value="oneBHK">1 BHK</option>
-            <option value="twoBHK">2 BHK</option>
+            <option value="1BHK">1 BHK</option>
+            <option value="2BHK">2 BHK</option>
+            <option value="3BHK">3 BHK</option>
+            <option value="4BHK">4 BHK</option>
         </select>
         <label htmlFor="floor">Floor*</label>
         <select name="floor" id="floor">
@@ -48,16 +50,12 @@ function Property() {
     <div>
         <label htmlFor="property-age">Property Age*</label>
         <select name="property-age" id="property-age">
-            <option value="below1">Newly Constructed</option>
-            <option value="above1">More than a year</option>
+            <option value="above1">Newly Constructed</option>
             <option value="above2">More than 2 years</option>
             <option value="above3">More than 3 years</option>
-            <option value="above4">More than 4 years</option>
             <option value="above5">More than 5 years</option>
             <option value="above8">More than 8 years</option>
             <option value="above10">More than 10 years</option>
-            <option value="above15">More than 15 years</option>
-            <option value="above20">More than 20 years</option>
         </select>
         <label htmlFor="facing">Facing*</label>
         <select name="facing" id="facing">

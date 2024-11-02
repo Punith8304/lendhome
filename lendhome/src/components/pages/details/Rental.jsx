@@ -7,12 +7,7 @@ function Rental() {
         <div>
             Property available for 
         </div>
-        <div>
-            <input type="radio" name="rentType" id="rent" value="rent" defaultChecked />
-            <label htmlFor="rent">Rent</label>
-            <input type="radio" name="rentType" id="lease" value="lease" />
-            <label htmlFor="lease">Lease</label>
-        </div>
+        
         <div>
             <div>
                 <label htmlFor="rent-money">Expected Rent(per month)* </label>

@@ -57,7 +57,6 @@ function Owners() {
         backgroundColor: "white",
         borderBottom: "4px solid green"
     }
-
     return (
 
         <div>

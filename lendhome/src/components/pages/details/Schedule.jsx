@@ -61,13 +61,11 @@ function Schedule() {
                 <option value="21">9PM</option>
                 <option value="24">12AM</option>
              </select>
-             <p>
-                
+             <p>s                
                 <input type="checkbox" id="allday" name="allday" />
                 <label htmlFor="allday">Available all day</label>
              </p>
         </div>
     </div>
 }
-
 export default Schedule;

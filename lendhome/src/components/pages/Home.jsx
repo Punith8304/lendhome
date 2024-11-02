@@ -3,7 +3,6 @@ import "../styles/Home.css"
 import houseImage from "../../images/house.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
-import { faMoneyBill } from '@fortawesome/free-solid-svg-icons';
 import { useNavigate } from "react-router-dom";
 import houseRentMap from "../../images/google-maps-house-rent.png";
 import Button from "@mui/material/Button";
@@ -18,6 +17,9 @@ function Home() {
         const buttonclicked = event.target.name;
         setIsClicked((buttonclicked === "buyButton") ? { buyButton: true, rentButton: false } : { buyButton: false, rentButton: true })
 
+    }
+    function handleSearch() {
+        navigate("/results")
     }
     return <div>
         <div className="header">
@@ -39,7 +41,7 @@ function Home() {
             </h2>
             <div className="input-city">
                 <select name="cityRent" id="cityRent">
-                    <option value="" defaultChecked>Select city</option>
+                    <option value="" defaultValue disabled>Select city</option>
                     <option value="hyderbad">Hyderabad</option>
                     <option value="banglore">Banglore</option>
                     <option value="delhi">Delhi</option>
@@ -52,7 +54,7 @@ function Home() {
                 <span>
                     <FontAwesomeIcon className="search-icon" icon={faMagnifyingGlass} />
                     <input className="input-text-city" type="text" name="city" placeholder="Type your search Area" />
-                    <button className="search-btn">
+                    <button className="search-btn" onClick={handleSearch}>
                         Search
                     </button>
                 </span>
