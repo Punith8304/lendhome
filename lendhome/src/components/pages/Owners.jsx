@@ -58,7 +58,6 @@ function Owners() {
         borderBottom: "4px solid green"
     }
     return (
-
         <div>
             <div className="post-title">
                 <p className="header">
