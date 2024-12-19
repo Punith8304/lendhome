@@ -1,9 +1,8 @@
 import React, { useState } from "react";
-import "../styles/Owners.css";
+import "./Owners.css";
 import Button from '@mui/material/Button';
 import { NavLink, useNavigate } from "react-router-dom";
-import PropertyDetails from "./PropertyType/PropertyDetails";
-var propertyPageVariable = "Rent"
+import PropertyDetails from "./houseUploadLayout/PropertyDetails";
 
 
 function Owners() {
@@ -35,7 +34,6 @@ function Owners() {
     }
     function handlePropertyTypeChange(event) {
         const clickedPropertyType = event.target.name;
-        propertyPageVariable = clickedPropertyType;
         setCurrentPropertytype({
             ...propertyTypes,
             [clickedPropertyType]: true

@@ -1,5 +1,5 @@
 import React, { useState } from "react";
-import "../../styles/Properties.css";
+import "./Properties.css";
 import { NavLink } from "react-router-dom"
 const pages = ["property", "locality", "rental", "amenities", "gallery", "schedule"]
 function PropertyDetails() {

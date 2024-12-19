@@ -10,12 +10,15 @@ function NextPage(props) {
     const currentPage = location.pathname.split("/").pop();
     async function handleSubmit() {
         try {
+            console.log(props.details)
             const result = await axios.post(`http://localhost:8000/upload/${currentPage}-details`, props.details)
             const nextIndex = pages.indexOf(currentPage) + 1;
             alert("hello world");
             console.log(props.details)
             navigate(`/owner/rent/${pages[nextIndex]}`)
-        } catch (error) {
+            console.log(result)
+        }
+        catch (error) {
             console.log(error)
         }
     }

@@ -1,5 +1,5 @@
 import React, { useState } from "react"
-import NextPage from "./NextPage";
+import NextPage from "../nexpage/NextPage.jsx";
 import Button from '@mui/material/Button';
 function Locality() {
     const [localityDetails, setLocalityDetails] = useState({
@@ -38,4 +38,5 @@ function Locality() {
         {!localityDetails.area_name || !localityDetails.street ? <Button variant="contained" onClick={() => alert("Fill all Details")}>Save & next</Button> : <NextPage details={localityDetails} />}
     </div>
 }
+
 export default Locality;

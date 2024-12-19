@@ -1,12 +1,12 @@
 import React, { useState } from 'react'
-import "../styles/Home.css"
-import houseImage from "../../images/house.jpg";
+import houseImage from "../../../images/house.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
 import { useNavigate } from "react-router-dom";
-import houseRentMap from "../../images/google-maps-house-rent.png";
+import houseRentMap from "../../../images/google-maps-house-rent.png";
 import Button from "@mui/material/Button";
-import bridge from "../../images/bridge.jpg"
+import bridge from "../../../images/bridge.jpg"
+import "./Home.css"
 function Home() {
     const navigate = useNavigate()
     const [isClicked, setIsClicked] = useState({

@@ -1,22 +1,21 @@
 import React from "react";
-import Home from "./components/pages/Home.jsx";
+import Home from "./components/pages/home/Home.jsx";
 import "./App.css"
-import NavBar from "./components/NavBar.jsx"
+import NavBar from "./components/pages/home/navbar/NavBar.jsx"
 import { Routes, Route } from "react-router-dom"
-import Login from "./components/pages/Login.jsx"
-import Owners from "./components/pages/Owners.jsx"
-import WishList from "./components/pages/WishList.jsx"
-import Services from "./components/pages/Services.jsx";
-import About from "./components/pages/About.jsx"
-import PropertyDetails from "./components/pages/PropertyType/PropertyDetails.jsx"
-import Amenities from "./components/pages/details/Amenities.jsx"
-import Gallery from "./components/pages/details/Gallery.jsx"
-import Locality from "./components/pages/details/Locality.jsx"
-import Property from "./components/pages/details/Property.jsx"
-import Rental from "./components/pages/details/Rental.jsx"
-import Schedule from "./components/pages/details/Schedule.jsx"
-import Layout from "./components/pages/PropertyType/Layout.jsx"
-import Results from "./components/pages/Results.jsx";
+import Login from "./components/pages/login/Login.jsx"
+import WishList from "./components/pages/wishlist/WishList.jsx"
+import Services from "./components/pages/services/Services.jsx";
+import About from "./components/pages/about/About.jsx"
+import Property from "./components/pages/owners/houseUploadDetails/Property.jsx"
+import Locality from "./components/pages/owners/houseUploadDetails/Locality.jsx";
+import Rental from "./components/pages/owners/houseUploadDetails/Rental.jsx";
+import Amenities from "./components/pages/owners/houseUploadDetails/Amenities.jsx";
+import Gallery from "./components/pages/owners/houseUploadDetails/Gallery.jsx";
+import Schedule from "./components/pages/owners/houseUploadDetails/Schedule.jsx";
+import Layout from "./components/pages/owners/houseUploadLayout/Layout.jsx"
+import Results from "./components/pages/results/Results.jsx";
+import Owners from "./components/pages/owners/Owners.jsx";
 function App() {
   return (
     <div>
