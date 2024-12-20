@@ -9,7 +9,6 @@ function Gallery() {
     function handleChange(event) {
         const uploadedFile = event.target.files
         setFile(uploadedFile);
-        console.log(file)
     }
     async function handleClick(event) {
         event.preventDefault()
@@ -22,7 +21,9 @@ function Gallery() {
     }
     useEffect(() => {
         console.log(uploadImages)
-    }, uploadImages)
+    },[uploadImages])
+
+    
     return (
         <div>
             <p style={{ marginBottom: "1rem" }}>Upload photos</p>
