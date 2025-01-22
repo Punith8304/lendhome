@@ -56,7 +56,7 @@ function Owners() {
         borderBottom: "4px solid green"
     }
     return (
-        <div>
+        <div className="owners">
             <div className="post-title">
                 <p className="header">
                     Sell or Rent your property for free

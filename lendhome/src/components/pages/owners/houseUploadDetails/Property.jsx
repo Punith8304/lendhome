@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import NextPage from "../nexpage/NextPage.jsx";
 import Button from '@mui/material/Button';
+import "../houseUploadLayout/Properties.css";
 function Property() {
     const floor = Array.from({ length: 9 }, (_, i) => i + 1)
     const [propertyDetails, setPropertyDetails] = useState({

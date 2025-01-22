@@ -1,4 +1,4 @@
-import React, { useState } from 'react'
+import React, { useState, useRef, useEffect, createContext } from 'react'
 import houseImage from "../../../images/house.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
@@ -6,23 +6,85 @@ import { useNavigate } from "react-router-dom";
 import houseRentMap from "../../../images/google-maps-house-rent.png";
 import Button from "@mui/material/Button";
 import bridge from "../../../images/bridge.jpg"
+import axios from "axios"
 import "./Home.css"
+import areaCoordinates from '../../utils/cityCoordinates.jsx';
+export const resultContext = createContext()
 function Home() {
+    const inputRef = useRef()
     const navigate = useNavigate()
+    const [searchDetails, setSearchDetails] = useState({
+        city: "bangalore",
+        areaName: ""
+    })
+    const [message, setMessage] = useState(false)
     const [isClicked, setIsClicked] = useState({
         buyButton: false,
         rentButton: true
     })
+
+
+
+    const autoComplete = new window.google.maps.places.Autocomplete(inputRef.current, {
+        bounds: {
+            north: areaCoordinates[searchDetails.city].latitude + areaCoordinates[searchDetails.city].degrees,
+            south: areaCoordinates[searchDetails.city].latitude - areaCoordinates[searchDetails.city].degrees,
+            east: areaCoordinates[searchDetails.city].longitude + areaCoordinates[searchDetails.city].degrees,
+            west: areaCoordinates[searchDetails.city].longitude - areaCoordinates[searchDetails.city].degrees
+        },
+        strictBounds: true
+    })
+    autoComplete.addListener('place_changed', () => {
+        const place = autoComplete.getPlace()
+        if (!place.geometry || !place.geometry.location) {
+            alert("Please select another nearby location")
+        }
+        if (place.geometry.viewport || place.geometry.location) {
+            setSearchDetails(prev => {
+                return {
+                    ...prev,
+                    areaName: inputRef.current.value,
+                    latitude: place.geometry.location.lat(),
+                    longitude: place.geometry.location.lng()
+                }
+            })
+        }
+    })
+
     function handleClick(event) {
         const buttonclicked = event.target.name;
         setIsClicked((buttonclicked === "buyButton") ? { buyButton: true, rentButton: false } : { buyButton: false, rentButton: true })
+    }
+
+    function handleSearchChange(event) {
+        const { name, value } = event.target;
+        setSearchDetails((prev) => {
+            return {
+                ...prev,
+                [name]: value
+            }
+        })
+    }
+
+    async function handleSearch() {
+        console.log(searchDetails)
+        try {
+            if (searchDetails.latitude && searchDetails.longitude) {
+                const { city, areaName, latitude, longitude } = searchDetails;
+                setMessage(false)
+                // const searchResult = await axios.post("http://localhost:8000/property/result", searchDetails, { withCredentials: true })
+                navigate(`/results?city=${city}&area=${areaName}&lat=${latitude}&lng=${longitude}`)
+            } else {
+                setMessage(true)
+            }
+        } catch (error) {
+
+        }
 
     }
-    function handleSearch() {
-        navigate("/results")
-    }
+
     return <div>
-        <div className="header">
+        <div className="home-header">
             <img className="house" src={houseImage} alt="House Imae" />
             <div className="disclaimer">
                 <p>Discover the top real estate in India</p>
@@ -36,30 +98,29 @@ function Home() {
             <button className="buy-button" style={!isClicked.buyButton ? { opacity: 0.6 } : { opacity: 1 }} name="buyButton" onClick={handleClick}>
                 Buy
             </button>
-            <h2 style={{marginBottom: "1rem" }}>
+            <h2 style={{ marginBottom: "1rem", color: "black" }}>
                 {isClicked.rentButton ? "Search for your rent House" : "Search for your House Location"}
             </h2>
             <div className="input-city">
-                <select name="cityRent" id="cityRent">
-                    <option value="" defaultValue disabled>Select city</option>
-                    <option value="hyderbad">Hyderabad</option>
-                    <option value="banglore">Banglore</option>
-                    <option value="delhi">Delhi</option>
+                <select name="city" id="cityRent" onChange={handleSearchChange}>
+                    <option value="bangalore" selected>Bangalore</option>
                     <option value="chennai">Chennai</option>
+                    <option value="delhi">Delhi</option>
+                    <option value="hyderabad">Hyderabad</option>
                     <option value="kolkata">Kolkata</option>
                     <option value="mumbai">Mumbai</option>
                     <option value="pune">Pune</option>
                 </select>
-                
+
                 <span>
                     <FontAwesomeIcon className="search-icon" icon={faMagnifyingGlass} />
-                    <input className="input-text-city" type="text" name="city" placeholder="Type your search Area" />
+                    <input className="input-text-city" type="text" name="areaName" ref={inputRef} onChange={handleSearchChange} placeholder="Type Area name" value={searchDetails.areaName} />
                     <button className="search-btn" onClick={handleSearch}>
                         Search
                     </button>
                 </span>
-                
             </div>
+            {message && <p style={{ color: "red", fontSize: "smaller", position: "relative", bottom: "1rem", left: "20rem" }}>Please select area name from suggestions</p>}
 
         </div>
         <div className="about-container">

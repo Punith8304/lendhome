@@ -1,5 +1,28 @@
 import * as uploadService from "../services/uploadService.js"
+import * as dbServices from "../services/dbService.js"
 import uploadQueryMaker from "../utils/queryObjectMaker.js"
 export const uploadLocalityDetails = async (req, res) => {
-    console.log(req, res)
+    const localityDetails = req.body
+    console.log(localityDetails)
+    try {
+        const {queryColumns, queryPlaceHolders, queryValues} = uploadQueryMaker(localityDetails.area)
+        const query = `INSERT INTO area (${queryColumns}) VALUES (${queryPlaceHolders}) RETURNING *`
+        const uploadedResult = await uploadService.createNewProperty(query, queryValues)
+        const areaId = uploadedResult.rows[0].area_id;
+        const cityId = await dbServices.getCityId(localityDetails.city)
+        const localityDetailsCopy = {...localityDetails, area_id: areaId, city_id: cityId}
+        delete localityDetailsCopy["area"]
+        delete localityDetailsCopy["city"]
+        console.log(localityDetailsCopy)
+        try {
+            const {queryColumns : columns, queryPlaceHolders : placeHolders, queryValues : values} = uploadQueryMaker(localityDetailsCopy)
+            const localityQuery = `INSERT INTO locality (${columns}) VALUES (${placeHolders}) RETURNING *`
+            const localityUploadedResult = await uploadService.createNewProperty(localityQuery, values) 
+            res.send(localityUploadedResult.rows[0])
+        } catch (error) {
+            console.log(error)
+        }
+    } catch(error) {
+        console.log(error)
+    }
 }

@@ -1,6 +1,7 @@
 import React, {useState} from "react"
 import { Button } from "@mui/material"
 import NextPage from "../nexpage/NextPage.jsx"
+import "../houseUploadLayout/Properties.css";
 function Amenities() {
     const [amenities, setAmenities] = useState({
         bathrooms: 2,

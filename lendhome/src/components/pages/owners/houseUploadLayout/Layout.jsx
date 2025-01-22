@@ -5,7 +5,7 @@ function Layout() {
   return (
     <div style={{display:"flex"}}>
       <PropertyDetails />
-      <div>
+      <div style={{width: "80%"}}>
       <Outlet /> 
       </div>
                             

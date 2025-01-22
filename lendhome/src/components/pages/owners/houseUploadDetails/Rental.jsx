@@ -1,6 +1,7 @@
 import React, { useState } from "react"
 import NextPage from "../nexpage/NextPage.jsx";
 import Button from '@mui/material/Button';
+import "../houseUploadLayout/Properties.css";
 function Rental() {
     const date = new Date();
     

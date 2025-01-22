@@ -2,6 +2,7 @@ import React, { useEffect, useState } from "react"
 import NextPage from "../nexpage/NextPage.jsx";
 import Button from '@mui/material/Button';
 import axios from "axios"
+import "../houseUploadLayout/Properties.css";
 function Gallery() {
     const [uploadImages, setUploadImages] = useState()
     const [showImages, setShowImages] = useState(false)

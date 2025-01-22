@@ -2,23 +2,40 @@ import express from "express"
 import dotenv from "dotenv"
 import cors from "cors"
 dotenv.config()
-
+import db from "./src/config/databaseConfig.js"
+import session from "express-session"
 import { connectDatabase } from "./src/config/databaseConfig.js"
 import uploadHouseDetails from "./src/routes/uploadHouseDetails.js"
 import userDetails from "./src/routes/userDetails.js"
+import pgSessionStore from "connect-pg-simple"
 const app = express()
-
 connectDatabase() //Establishing database connection
-
 app.use(express.json()) //parse incoming JSON requests
-app.use(cors())
-
- //Allow all origins by default
-
+app.use(cors({
+    origin: 'http://localhost:3000',
+    credentials: true
+}))
+// const postgresStore = pgSessionStore(session)
+//Allow all origins by default
+app.set('trust proxy', 1)
+app.use(session({
+    name: "session",
+    secret: process.env.SESSION_SECRET,
+    resave: false,
+    saveUninitialized: false,
+    cookie: {
+        secure: false,
+        maxAge: 1000 * 60,
+        httpOnly: true                        /*working (sessionId is not changing) after disabling sameSite : "none"*/
+    },
+    store: new (pgSessionStore(session))({      /*posstgresStore can be used instead of (pgSessionStore(session)) */
+        pool: db,   
+        tableName: "user_session"
+    })
+}))
 app.use("/upload", uploadHouseDetails)
 app.use("/user", userDetails)
-
-
+app.use("/authentication", userDetails)
 
 
 

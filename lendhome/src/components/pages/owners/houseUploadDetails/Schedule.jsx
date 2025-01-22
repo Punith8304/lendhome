@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import NextPage from "../nexpage/NextPage.jsx";
 import Button from '@mui/material/Button';
+import "../houseUploadLayout/Properties.css";
 function Schedule() {
     const [scheduleDetails, setScheduleDetails] = useState({
         available_day: 1,

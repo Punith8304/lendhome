@@ -11,7 +11,7 @@ function NextPage(props) {
     async function handleSubmit() {
         try {
             console.log(props.details)
-            const result = await axios.post(`http://localhost:8000/upload/${currentPage}-details`, props.details)
+            const result = await axios.post(`http://localhost:8000/upload/${currentPage}-details`, props.details, { withCredentials: true })
             const nextIndex = pages.indexOf(currentPage) + 1;
             alert("hello world");
             console.log(props.details)
