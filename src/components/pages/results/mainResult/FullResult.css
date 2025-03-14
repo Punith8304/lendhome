@@ -1,0 +1,136 @@
+.full-result-property-details {
+    display: flex;
+    margin: auto;
+}
+.property-owner-house-details-main {
+    display: flex;
+    justify-content: space-evenly;
+}
+.property-details-full-house-card {
+    display: flex;
+}
+.property-details-full-house-card div {
+    border: solid white 1px;
+    padding: 1rem;
+}
+.full-house-property-icons {
+    margin-right: 1rem;
+}
+.property-details-full-house-card div div {
+    line-height: 1.5;
+}
+.property-details-full-house-card div div p {
+    font-size: 12px;
+    text-align: center;
+    margin-top: 0.5rem;
+}
+
+.full-result-house-images .house-result-image {
+    width: 200px;
+    height: 200px;
+    margin-left: 5px;
+}
+
+.carousel-image {
+    width: 60%;
+    height: 600px;
+}
+#image-slider-carousel {
+    margin-left: 30%;
+}
+.full-house-header {
+    margin-bottom: 2%;
+    display: flex;
+    justify-content: space-evenly;
+}
+.property-details-owner-card {
+    display: flex;
+    padding: 1rem;
+}
+.property-details-owner-card-rental, .property-details-owner-card-interior {
+    display: flex;
+    padding: 1rem;
+    border: 1px white solid;
+}
+.property-details-owner-card-rental {
+    border: none;
+}
+.full-house-owner-header-keys div, .full-house-owner-header-values div{
+    margin-top: 1rem;
+    padding: 1rem;
+    border: 1px white solid;
+    height: 3rem;
+}
+.full-house-owner-header-values {
+    width: 16rem;
+    text-align: center;
+}
+.full-house-owner-header-keys {
+    width: 15rem;
+}
+.full-house-property-owner-icons {
+    margin-right: 0.7rem;
+}
+.horizontal-line-full-house {
+    margin: 2rem;
+}
+.carousel-slider-images {
+    text-align: center;
+    margin-top: 2rem;
+}
+.full-house-address-component {
+    text-align: center;
+}
+.full-house-address-components-full {
+    display: flex;
+    justify-content: center;
+    padding: 1rem;
+}
+.full-house-address-components-full-address {
+    width: 80%;
+    text-align: center;
+    margin: auto
+}
+.full-house-direction-tips {
+    text-align: center;
+    line-height: 2rem;
+    width: 60%;
+    margin: auto;
+    margin-top: 2rem;
+}
+.direction-tips-full-house-result {
+    margin-top: 1rem;
+}
+.property-full-result-property-decription {
+    text-align: center;
+    width: 60%;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+.property-full-result-property-decription h2 {
+    margin-bottom: 1.2rem;
+}
+.property-full-result-property-decription p {
+    line-height: 1.4;
+}
+.full-house-result-images {
+    text-align: center;
+}
+.full-house-result-image h2 {
+    margin-bottom: 1.2rem;
+}
+.images-horizontal-line {
+    width: 60%;
+    margin: auto;
+    margin-bottom: 2rem;
+}
+.full-house-address-table {
+    border-spacing: 20px;
+}
+.full-house-address-table td, .full-house-address-table tr {
+    padding: 10px;
+    border: solid green 2px;
+}
+.table-address-data {
+    width: 30vw;
+}

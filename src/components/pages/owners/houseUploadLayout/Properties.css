@@ -1,0 +1,89 @@
+.details-property {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    justify-content: space-between;
+    height: 200px;
+}
+.details-property .property-button {
+    padding: 10px;
+    width: 150px;
+    text-decoration: none;
+    color: black;
+}
+.property-page {
+    display: flex;
+    flex-direction: row;
+}
+#apartment-type, #bhk-type, #floor, #total-floor, #parking, #furninshing, #built-area, #property-age, #facing, #city,
+#availability, #rent-money, #deposit, #rent-negotiable, #monthly-maintenance, #bathroom, #balcony, #yes, #no, #property-show,
+#file-input, #file-submit, #secondary-number, .available-amenities input, #start-schedule, #end-schedule, #allday, #water-supply, #everyday, #furnishing {
+    width: auto;
+    padding: 1rem;
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+#locality, #landmark {
+    width: 50%;
+    padding: 1rem;
+    margin-left: 0.5rem;
+    margin-bottom: 1.2rem;
+    margin-top: 1rem;
+}
+.built-area-input input::-webkit-outer-spin-button,
+.built-area-input input::-webkit-inner-spin-button,
+.rent input::-webkit-inner-spin-button,
+.rent input::-webkit-outer-spin-button,
+#secondary-number::-webkit-outer-spin-button,
+#secondary-number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+#rent, #lease, #rent-negotiable, #yes, #no, .available-amenities input {
+    margin-left: 50px;
+}
+#anyone, #family, #bachelor-female, #bachelor-male, #company {
+    width: auto;
+    padding: 1rem;
+    margin-left: 3rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+#parking, #furnishing, #property-show {
+    margin-right: 9rem;
+}
+#description, #direction {
+    width: 100%;
+    height: 6rem;
+    margin-top: 2rem;
+}
+textarea:focus {
+    outline: none;
+}
+#everyday, #weekday, #weekend {
+    white-space: pre;
+    padding: 2rem;
+    margin-right: 1rem;
+    margin-top: 1.5rem;
+    background-color: white;
+}
+#rent-money, #bhk-type, #floor, #property-age, #city, #rent-amount, #bathroom, #balcony, #start-schedule {
+    margin-right: 70px;
+}
+.house-card-details {
+    padding: 1.8rem 0;
+    width: fit-content;
+    height: 20%;
+    border: double black;
+    margin: 1.5rem;
+}
+.house-card-details p {
+    font-size: small;
+}
+
+.house-card-details div div {
+    width: 50%;
+    padding: 1rem auto;
+}
+

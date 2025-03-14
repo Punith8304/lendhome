@@ -1,0 +1,88 @@
+.nav-home-header {
+    position: sticky;
+    top: 0;
+    color: black;
+    display: flex;
+    width: 100%;
+    padding: 10px 10%;
+    margin-bottom: 2%;
+    justify-content: space-between;
+    align-items: center;
+    font-size: large;
+    background-color: #A5BFCC;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 0px #aaa;
+    z-index: 1;
+}
+
+.logo-navbar {
+    font-size: 32px;
+    font-weight: 700;
+    text-decoration: none;
+    color: black;
+}
+
+.navbar-home-manual .link {
+    position: relative;
+    font-size: 18px;
+    font-weight: 500;
+    text-decoration: none;
+    color: black;
+    padding: 2% 10px;
+    margin-left: 25px;
+}
+
+.navbar-home-manual .link:hover {
+    background-color: #BCCCDC;
+    border-radius: 10px;
+    box-shadow: 0px 5px 10px 0px #aaa;
+}
+
+
+.selected-link {
+    background-color: #FFFDEC;
+    border-radius: 10px;
+}
+
+.user-icon {
+    font-size: 20px;
+    margin: 0;
+    padding: 0;
+    margin-right: 10px;
+}
+
+.user-menu {
+    position: absolute;
+    top: 90%;
+    right: 10%;
+    width: 300px;
+    background-color: red;
+    z-index: 2;
+    border-radius: 30px;
+}
+
+.user-sub-menu {
+    padding: 8px 30px 20px;
+    text-align: center;
+}
+
+.user-profile-icon {
+    font-size: 50px;
+    padding-bottom: 0;
+}
+
+.user-profile-menu {
+    font-size: 12px;
+    display: flex;
+    text-align: center;
+    justify-content: center;
+    margin-top: 5px;
+}
+
+.user-profile-menu-logout {
+    cursor: pointer;
+}
+
+.user-profile-menu-icons {
+    font-size: 15px;
+}

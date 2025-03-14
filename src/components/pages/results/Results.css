@@ -1,0 +1,59 @@
+.result-box {
+    border: 1px solid black;
+    width: 60vw;
+    margin-left: 1.5rem;
+    width: fit-content;
+    height: fit-content
+}
+
+.result-head {
+    margin: 1.5rem;
+}
+
+.result-head h3 {
+    padding-bottom: 1rem;
+}
+
+.result-money-details {
+    display: flex;
+    border-top: 1px solid black;
+    border-bottom: 1px solid black;
+    width: fit-content;
+    padding: 1.5rem 2rem
+}
+
+.result-money-details .result-rent-details {
+    border-right: solid 1px black;
+    padding: 0 5.25rem
+}
+
+.result-built-up {
+    padding: "0 5rem"
+}
+
+.result-card-details {
+    display: flex;
+}
+
+.result-card-details img {
+    width: 16vw;
+    margin: 1.5rem 1rem 1.5rem 1.5rem
+}
+
+.result-card-details .result-house-details-card {
+    margin: 1.5 1.5 0 1.5;
+    padding-bottom: 1rem
+}
+
+.result-house-interior-details {
+    display: flex;
+    padding-bottom: 1rem;
+    border-bottom: 1px solid black
+}
+
+.result-house-details-button {
+    margin: 1rem 2rem auto 4rem
+}
+.display-house-properties-card {
+    margin-bottom: 2rem;
+}

@@ -1,0 +1,71 @@
+.post-title {
+    width: 75%;
+    margin: auto;
+    display: flex;
+    justify-content: space-between;
+}
+.post-title .navigate-home-p {
+    background-color: rgb(207, 211, 211);
+    width: 25%;
+    height: 40px;
+    padding-top: 1%;
+    padding-left: 1.5%;
+    font-weight: normal;
+}
+.post-title .header {
+    font-size: 28px;
+    font-weight: 500;
+}
+.post-house {
+    height: 500px;
+    border: solid black 1px;
+    width: 75%;
+    margin: auto;
+    margin-top: 20px;
+    display: flex;
+}
+.post-description {
+    border: solid 1px black;
+    width: 25%;
+    height: 100%;
+    line-height: 2;
+}
+.post-description .heading-2 {
+    text-align: center;
+    margin-top: 10px;
+    font-size: larger;
+}
+.post-description p {
+    text-align: center;
+    font-size: normal;
+}
+.property-button, .property-type button {
+    background-color: #f2f2f2;
+    border: black 1px solid;
+}
+.select-property {
+    display: flex;
+    flex-direction: row;
+}
+.property-type {
+    border: 1px solid black;
+    width: 100%;
+    margin-top: 3rem;
+    line-height: 4rem;
+    text-align: center;
+}
+.post-button {
+    width: 100%;
+    margin-top: 100px;
+    margin-left: 20%;
+    height: 3rem;
+    border-radius: 5px;
+    color: white;
+    background-color: #fd3752;
+    font-size: 17px;
+    font-weight: bold;
+    cursor: pointer;
+}
+.post-button:hover {
+    background-color: #e3324a;
+}
