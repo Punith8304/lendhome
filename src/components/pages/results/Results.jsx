@@ -28,16 +28,17 @@ function Results() {
                 setProperties(prev => [...prev, result])
             })
         })()
+        console.log(houseIds)
     }, [houseIds])
 
     async function getFullProperties(houseId) {
         const result = await axios.post("http://localhost:8000/property-details/get-display-properties", { houseId: houseId }, { withCredentials: true })
+        console.log(result)
         return result.data
     }
-
     
     return <div>
-        {properties.map(element => {
+        {houseIds.length === 0 ? <h1>No Properties found within 10km of selection region</h1> : properties.map(element => {
             return <PropertyCard displayDetails={element} />
         })}
     </div>

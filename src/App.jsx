@@ -3,7 +3,7 @@ import axios from "axios"
 import Home from "./components/pages/home/Home.jsx";
 import "./App.css"
 import NavBar from "./components/pages/home/navbar/NavBar.jsx"
-import { Routes, Route } from "react-router-dom"
+import { Routes, Route, Router } from "react-router-dom"
 import Login from "./components/pages/authentication/Login.jsx"
 import Signup from "./components/pages/authentication/Signup.jsx"
 import WishList from "./components/pages/wishlist/WishList.jsx"
@@ -49,24 +49,26 @@ function App() {
       <div>
         <NavBar />
         <div>
-          <Routes>
-            <Route path="/" element={<Home />} />
-            <Route path="/owner" element={<Owners />} />
-            <Route path="/login" element={<Login />} />
-            <Route path="signup" element={<Signup />} />
-            <Route path="/wish-list" element={<WishList />} />
-            <Route path="/results" element={<Results />} />
-            <Route path="/my-properties" element={userAuthentication.login ? <MyProperties /> : <Login />} />
-            <Route path="/house" element={userAuthentication.login ? <FullResult /> : <Login />} />
-            <Route path="/owner/rent" element={userAuthentication.login ? <Layout /> : <Login />}>
-              <Route path="property" element={<Property />} />
-              <Route path="locality" element={<Locality />} />
-              <Route path="rental" element={<Rental />} />
-              <Route path="amenities" element={<Amenities />} />
-              <Route path="gallery" element={<Gallery />} />
-              <Route path="schedule" element={<Schedule />} />
-            </Route>
-          </Routes>
+
+
+            <Routes>
+              <Route path="/" element={<Home />} />
+              <Route path="/owner" element={<Owners />} />
+              <Route path="/login" element={<Login />} />
+              <Route path="signup" element={<Signup />} />
+              <Route path="/wish-list" element={userAuthentication.login ? <WishList /> : <Login />} />
+              <Route path="/results" element={<Results />} />
+              <Route path="/my-properties" element={userAuthentication.login ? <MyProperties /> : <Login />} />
+              <Route path="/house" element={userAuthentication.login ? <FullResult /> : <Login />} />
+              <Route path="/owner/rent" element={userAuthentication.login ? <Layout /> : <Login />}>
+                <Route path="property" element={<Property />} />
+                <Route path="locality" element={<Locality />} />
+                <Route path="rental" element={<Rental />} />
+                <Route path="amenities" element={<Amenities />} />
+                <Route path="gallery" element={<Gallery />} />
+                <Route path="schedule" element={<Schedule />} />
+              </Route>
+            </Routes>
         </div>
       </div>
     </loginStatusContext.Provider>

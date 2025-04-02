@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from "react"
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
+import axios from "axios"
 
 function PropertyCard(props) {
     const navigate = useNavigate()
@@ -23,18 +24,28 @@ function PropertyCard(props) {
             }
             const objectKeys = Object.keys(preferredTenants)
             const trueTenants = objectKeys.map(key => {
-                if(preferredTenants[key]) {
+                if (preferredTenants[key]) {
                     return key
                 }
             })
             setPreferredTypes(trueTenants.join(","))
             console.log(trueTenants.join(","))
         }
+            
     }, [])
 
     function getFullResult() {
         navigate(`/house?id=${props.displayDetails.house_id}`)
     }
+    async function handleWishList() {
+        const result = await axios.post("http://localhost:8000/user-property/add-to-wishlist", { houseId: props.displayDetails.house_id }, { withCredentials: true })
+        if(result.data.status === 200) {
+            navigate('/wish-list')
+        } else {
+            alert("Unable to add to favourites")
+        }
+    }
+    
     return <div className="display-house-properties-card" style={{ border: "1px solid black", width: "60vw", marginLeft: "1.5rem", width: "fit-content", height: "fit-content" }}>
         <div style={{ margin: "1.5rem" }}>
             <h3 style={{ paddingBottom: "1rem" }}>
@@ -70,12 +81,10 @@ function PropertyCard(props) {
                     Built Up
                 </p>
             </div>
-
         </div>
         <div style={{ display: "flex" }}>
             <img style={{ width: "16vw", margin: "1.5rem 1rem 1.5rem 1.5rem" }} src="https://media.istockphoto.com/id/1255835530/photo/modern-custom-suburban-home-exterior.jpg?s=612x612&w=0&k=20&c=0Dqjm3NunXjZtWVpsUvNKg2A4rK2gMvJ-827nb4AMU4=" alt="house-img" />
             <div className="house-card-details" style={{ margin: "1.5 1.5 0 1.5", paddingBottom: "1rem" }}>
-
                 <div style={{ display: "flex", paddingBottom: "1rem", borderBottom: "1px solid black" }}>
                     <div style={resultStyle}>
                         <h4>
@@ -91,7 +100,7 @@ function PropertyCard(props) {
                     </div>
                 </div>
                 <div style={{ display: "flex", paddingTop: "1rem" }}>
-                    <div style={{...resultStyle}}>
+                    <div style={{ ...resultStyle }}>
                         <h4>
                             {preferredTypes}
                         </h4>
@@ -104,19 +113,15 @@ function PropertyCard(props) {
                         <p>Available from</p>
                     </div>
                 </div>
-
-
                 <Button onClick={getFullResult} style={{ margin: "1rem 2rem auto 4rem" }} variant="contained" size="small">
                     Get House details
                 </Button>
 
-                <Button style={{ margin: "1rem 2rem auto 4rem" }} variant="contained" size="small">
+                {props.wishList ? null : <Button  onClick={handleWishList} style={{ margin: "1rem 2rem auto 4rem" }} variant="contained" size="small">
                     Add to wishlist
-                </Button>
+                </Button>}
             </div>
-
         </div>
-
     </div>
 }
 

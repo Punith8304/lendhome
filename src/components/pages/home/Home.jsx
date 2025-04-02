@@ -37,7 +37,7 @@ function Home() {
     autoComplete.addListener('place_changed', () => {
         const place = autoComplete.getPlace()
         if (!place.geometry || !place.geometry.location) {
-            alert("Please select another nearby location")
+            setMessage(true)
         }
         if (place.geometry.viewport || place.geometry.location) {
             setSearchDetails(prev => {

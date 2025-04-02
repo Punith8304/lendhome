@@ -51,6 +51,7 @@
     margin-right: 10px;
 }
 
+/* 
 .user-menu {
     position: absolute;
     top: 90%;
@@ -85,4 +86,110 @@
 
 .user-profile-menu-icons {
     font-size: 15px;
+}
+ */
+
+
+/* User Menu Box */
+.user-menu-box {
+    position: absolute;
+    top: 50px;
+    right: 0;
+    width: 260px;
+    background: #ffffff;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+    border-radius: 10px;
+    opacity: 0;
+    transform: translateY(-10px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    display: none;
+    z-index: 100;
+}
+
+/* Show when active */
+.user-menu-box.visible {
+    opacity: 1;
+    transform: translateY(0);
+    display: block;
+}
+
+/* User Menu Content */
+.user-menu-content {
+    padding: 15px;
+}
+
+/* Profile Header */
+.user-profile-header {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+    padding-bottom: 12px;
+    border-bottom: 1px solid #ddd;
+    text-align: center;
+}
+
+.user-profile-icon {
+    font-size: 40px;
+    color: #007bff;
+}
+
+.user-name {
+    font-size: 1.2rem;
+    font-weight: bold;
+    color: #333;
+}
+
+/* User Info */
+.user-info {
+    margin-top: 12px;
+}
+
+.user-detail {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    font-size: 0.9rem;
+    color: #555;
+    padding: 5px 0;
+}
+
+.user-icon {
+    font-size: 18px;
+    color: #007bff;
+}
+
+/* Divider */
+.menu-divider {
+    margin: 10px 0;
+    border: none;
+    border-top: 1px solid #ddd;
+}
+
+/* Menu Options */
+.menu-option {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+    padding: 10px;
+    font-size: 1rem;
+    color: #333;
+    transition: background 0.2s;
+    cursor: pointer;
+    border-radius: 5px;
+}
+
+.menu-option:hover {
+    background: rgba(0, 123, 255, 0.1);
+}
+
+.menu-link {
+    text-decoration: none;
+    color: #333;
+    font-weight: 500;
+}
+
+/* Logout Button */
+.logout {
+    color: red;
+    font-weight: bold;
 }

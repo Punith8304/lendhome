@@ -1,7 +1,6 @@
 import React, { useEffect, useRef, useState } from "react"
 import "./FullResult.css"
 import Button from '@mui/material/Button'
-import { addToWishList } from "../../../utils/addingWishList.jsx"
 import axios from "axios"
 import { useLocation } from "react-router-dom";
 

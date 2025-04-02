@@ -3,6 +3,7 @@ import NextPage from "../nexpage/NextPage.jsx";
 import Button from '@mui/material/Button';
 import axios from "axios"
 import "../houseUploadLayout/Properties.css";
+import { data } from "autoprefixer";
 function Gallery() {
     const [uploadImages, setUploadImages] = useState()
     const [showImages, setShowImages] = useState(false)
@@ -23,8 +24,6 @@ function Gallery() {
     useEffect(() => {
         console.log(uploadImages)
     },[uploadImages])
-
-    
     return (
         <div>
             <p style={{ marginBottom: "1rem" }}>Upload photos</p>
@@ -60,9 +59,7 @@ function Gallery() {
                     />
                 ))}
             </div>}
-
         </div>
     );
 }
-
 export default Gallery
