@@ -19,6 +19,7 @@ function Results() {
     }
     useEffect(() => {
         getHouseIds()
+        console.log("got house Ids")
     }, [])
     useEffect(() => {
         (async function () {
@@ -30,10 +31,10 @@ function Results() {
         })()
         console.log(houseIds)
     }, [houseIds])
-
+    
     async function getFullProperties(houseId) {
         const result = await axios.post("http://localhost:8000/property-details/get-display-properties", { houseId: houseId }, { withCredentials: true })
-        console.log(result)
+        console.log(result.data, "display result")
         return result.data
     }
     
@@ -42,6 +43,6 @@ function Results() {
             return <PropertyCard displayDetails={element} />
         })}
     </div>
-
+    
 }
 export default Results

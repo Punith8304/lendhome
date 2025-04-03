@@ -2,8 +2,7 @@ import React, { useEffect, useRef, useState } from "react"
 import "./FullResult.css"
 import Button from '@mui/material/Button'
 import axios from "axios"
-import { useLocation } from "react-router-dom";
-
+import { useLocation, useNavigate } from "react-router-dom";
 
 
 import { MdTableRestaurant, MdFamilyRestroom, MdBalcony, MdEmail } from "react-icons/md";
@@ -21,6 +20,7 @@ import ImageCarousel from "./ImageCarousel.jsx";
 
 
 function FullResult() {
+    const navigate = useNavigate()
     const [details, setDetails] = useState({
         userDetails: {
             user_id: "",
@@ -101,25 +101,20 @@ function FullResult() {
             available_allday: "",
             availability: ""
         },
-        galleryDetails: {
-            images_id: "",
-            images_array: [{
-                // path: 'C:\\Users\\punit\\Desktop\\Projects\\LendHome\\uploads\\8e47d694d34be2ec52e47e37fcbcec05',
-                // size: 336971,
-                // encoding: '7bit',
-                // filename: '8e47d694d34be2ec52e47e37fcbcec05',
-                // mimetype: 'image/png',
-                // fieldname: 'files',
-                // destination: 'C:/Users/punit/Desktop/Projects/LendHome/uploads',
-                // originalname: 'Screenshot (768).png'
-            }]
-        }
+        galleryDetails: []
     })
     const [preferredTypes, setPreferredTypes] = useState()
     const [openSlider, setOpenSlider] = useState(false)
     const location = useLocation()
-    function handleAddToWishList() {
-        console.log("success")
+    async function handleAddToWishList() {
+        const querySearchParameter = new URLSearchParams(location.search)
+        const houseId = querySearchParameter.get("id")
+        const result = await axios.post("http://localhost:8000/user-property/add-to-wishlist", { houseId: houseId }, { withCredentials: true })
+        if (result.data.status === 200) {
+            navigate('/wish-list')
+        } else {
+            alert("Unable to add to favourites")
+        }
     }
     useEffect(() => {
         (async function () {
@@ -443,7 +438,7 @@ function FullResult() {
             <div className="full-house-result-images">
                 <h2>Property Images</h2>
                 <div>
-                    <ImageCarousel imagesData={details.galleryDetails.images_array} />
+                    <ImageCarousel imagesData={details.galleryDetails} />
                 </div>
             </div>
         </div>

@@ -1,16 +1,11 @@
 import React, { useState } from "react"
-import Carousel from 'react-bootstrap/Carousel';
 
-
-
-
-import { CarouselItem } from "react-bootstrap";
 
 function ImageCarousel(props) {
-    const [imageIndex, setImageIndex] = useState(0)
+    console.log(props.imagesData)
     return (<div className="carousel-slider-images">
             {
-                props.imagesData.map(image => <div><img className="carousel-image" src={`${image.path}.jpg`} alt="First slide" /> <hr style={{margin: "1rem 40%"}}/></div>)
+                props.imagesData.map(image => <div><img className="carousel-image" src={`http://localhost:8000/property-details/images/${image.images_id}`} alt="First slide" /> <hr style={{margin: "1rem 40%"}}/></div>)
             }
     </div>
     )
