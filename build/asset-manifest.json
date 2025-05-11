@@ -1,0 +1,18 @@
+{
+  "files": {
+    "main.css": "/static/css/main.a568096a.css",
+    "main.js": "/static/js/main.adeafc2b.js",
+    "static/media/google-maps-house-rent.png": "/static/media/google-maps-house-rent.22c28375c1bf99efb295.png",
+    "static/media/bridge.jpg": "/static/media/bridge.71aa7726c1050f5f6c2b.jpg",
+    "static/media/house.jpg": "/static/media/house.de2490bf594b61f1553c.jpg",
+    "static/media/fraction.cjs": "/static/media/fraction.7992481f3d8339b77604.cjs",
+    "index.html": "/index.html",
+    "static/media/index.cjs": "/static/media/index.cd351d7c31d0d3fccf96.cjs",
+    "main.a568096a.css.map": "/static/css/main.a568096a.css.map",
+    "main.adeafc2b.js.map": "/static/js/main.adeafc2b.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.a568096a.css",
+    "static/js/main.adeafc2b.js"
+  ]
+}
