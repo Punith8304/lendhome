@@ -1,12 +1,14 @@
-import React, { useState } from "react"
+import React, { useState, useContext } from "react"
+import { loginStatusContext } from "../../../../App"
 
 
 function ImageCarousel(props) {
     console.log(props.imagesData)
+    const { userAuthentication, setUserAuthentication } = useContext(loginStatusContext)
     return (<div className="carousel-slider-images">
-            {
-                props.imagesData.map(image => <div><img className="carousel-image" src={`http://localhost:8000/property-details/images/${image.images_id}`} alt="First slide" /> <hr style={{margin: "1rem 40%"}}/></div>)
-            }
+        {
+            props.imagesData.map(image => <div><a href={`${userAuthentication.apiEndPoint}/property-details/images/${image.images_id}`} target="_blank"><img className="carousel-image" src={`${userAuthentication.apiEndPoint}/property-details/images/${image.images_id}`} alt="First slide" /> </a><hr style={{ margin: "1rem 40%" }} /></div>)
+        }
     </div>
     )
 }

@@ -18,7 +18,7 @@ function Owners() {
                 console.log(userAuthentication.user.house.currentProperty)
                 navigate(`/owner/rent/${userAuthentication.user.house.currentProperty}`)
             } else {
-                const result = await axios.get("http://localhost:8000/property-details/create-new-house-item", { withCredentials: true })
+                const result = await axios.get(`${userAuthentication.apiEndPoint}/property-details/create-new-house-item`, { withCredentials: true })
                 setUserAuthentication(prev => {
                     return {
                         ...prev,

@@ -26,7 +26,7 @@ function Login() {
   async function handleLogin(event) {
     if (validator.isEmail(loginCredentials.email)) {
       event.preventDefault()
-      const loginStatus = await axios.post("http://localhost:8000/user/login", loginCredentials, { withCredentials: true })
+      const loginStatus = await axios.post(`${userAuthentication.apiEndPoint}/user/login`, loginCredentials, { withCredentials: true })
       if (loginStatus.data.login) {
         setUserAuthentication(loginStatus.data)
         navigate(pathname === "/login" ? "/" : pathname)

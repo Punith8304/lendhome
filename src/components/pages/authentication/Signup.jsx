@@ -51,7 +51,7 @@ function Signup() {
         }
     }
     async function handleSignUp() {
-        const signUpResult = await axios.post("http://localhost:8000/user/signup", signUpCredentials, { withCredentials: true })
+        const signUpResult = await axios.post(`${userAuthentication.apiEndPoint}/user/signup`, signUpCredentials, { withCredentials: true })
         if (signUpResult.data.login) {
             setUserAuthentication(signUpResult.data)
             setSignUpStatus({ status: false, message: "" })

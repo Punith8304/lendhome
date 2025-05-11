@@ -1,12 +1,16 @@
-import React, { useEffect, useState } from 'react'
+import React, { useEffect, useState, useContext } from 'react'
 import axios from "axios"
 import PropertyCard from "../results/PropertyCard.jsx"
+import { loginStatusContext } from '../../../App.jsx'
+
+
 function Favourites() {
+  const { userAuthentication, setUserAuthentication } = useContext(loginStatusContext)
   const [wishListId, setWishListId] = useState([])
   const [properties, setProperties] = useState([])
   useEffect(() => {
     (async function () {
-      const result = await axios.get("http://localhost:8000/user-property/get-wishlist", { withCredentials: true })
+      const result = await axios.get(`${userAuthentication.apiEndPoint}/user-property/get-wishlist`, { withCredentials: true })
       if (!result.data.isEmpty) {
         setWishListId(result.data.wishList)
       }
@@ -25,7 +29,7 @@ function Favourites() {
   }, [wishListId])
 
   async function getFullProperties(houseId) {
-    const result = await axios.post("http://localhost:8000/property-details/get-display-properties", { houseId: houseId }, { withCredentials: true })
+    const result = await axios.post(`${userAuthentication.apiEndPoint}/property-details/get-display-properties`, { houseId: houseId }, { withCredentials: true })
     console.log(result)
     return result.data
   }

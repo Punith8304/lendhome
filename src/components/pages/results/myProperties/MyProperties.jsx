@@ -1,14 +1,16 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useContext } from "react";
 import axios from "axios";
 import PropertyCard from "../PropertyCard.jsx";
+import { loginStatusContext } from "../../../../App.jsx";
 
 function MyProperties() {
+    const { userAuthentication, setUserAuthentication } = useContext(loginStatusContext)
     const [propertyData, setPropertyData] = useState([])
     const [propertyIds, setPropertyIds] = useState([])
     useEffect(() => {
         if (propertyIds.length === 0) {
             (async function () {
-                const result = await axios.get("http://localhost:8000/user-property/get-posted-properties", { withCredentials: true })
+                const result = await axios.get(`${userAuthentication.apiEndPoint}/user-property/get-posted-properties`, { withCredentials: true })
                 setPropertyIds(result.data.propertiesIds)
                 console.log(result.data, "property Ids")
             })()
@@ -16,7 +18,7 @@ function MyProperties() {
             
             (async function () {
                 propertyIds.forEach(async (houseId) => {
-                    const houseDetails = await axios.post("http://localhost:8000/property-details/get-display-properties", { houseId: houseId }, { withCredentials: true })
+                    const houseDetails = await axios.post(`${userAuthentication.apiEndPoint}/property-details/get-display-properties`, { houseId: houseId }, { withCredentials: true })
                     console.log(propertyData, propertyIds, houseDetails.data)
                     setPropertyData(prev => {
                         console.log(prev, "previous", propertyIds)

@@ -72,7 +72,6 @@ function Home() {
             if (searchDetails.latitude && searchDetails.longitude) {
                 const { city, areaName, latitude, longitude } = searchDetails;
                 setMessage(false)
-                // const searchResult = await axios.post("http://localhost:8000/property/result", searchDetails, { withCredentials: true })
                 navigate(`/results?city=${city}&area=${areaName}&lat=${latitude}&lng=${longitude}`)
             } else {
                 setMessage(true)

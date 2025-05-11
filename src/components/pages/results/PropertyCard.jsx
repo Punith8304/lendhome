@@ -1,9 +1,11 @@
-import React, { useEffect, useState } from "react"
+import React, { useEffect, useState, useContext } from "react"
 import Button from '@mui/material/Button';
 import { useNavigate } from "react-router-dom";
 import axios from "axios"
+import { loginStatusContext } from "../../../App.jsx";
 
 function PropertyCard(props) {
+    const { userAuthentication, setUserAuthentication } = useContext(loginStatusContext)
     const navigate = useNavigate()
     const [preferredTypes, setPreferredTypes] = useState()
     const resultStyle = {
@@ -39,7 +41,7 @@ function PropertyCard(props) {
         navigate(`/house?id=${props.displayDetails.house_id}`)
     }
     async function handleWishList() {
-        const result = await axios.post("http://localhost:8000/user-property/add-to-wishlist", { houseId: props.displayDetails.house_id }, { withCredentials: true })
+        const result = await axios.post(`${userAuthentication.apiEndPoint}/user-property/add-to-wishlist`, { houseId: props.displayDetails.house_id }, { withCredentials: true })
         if (result.data.status === 200) {
             navigate('/wish-list')
         } else {
@@ -84,7 +86,7 @@ function PropertyCard(props) {
             </div>
         </div>
         <div style={{ display: "flex" }}>
-            <img style={{ width: "16vw", margin: "1.5rem 1rem 1.5rem 1.5rem" }} src={`http://localhost:8000/property-details/images/${props.displayDetails.gallery_id}`} alt="house-img" />
+            <img style={{ width: "16vw", margin: "1.5rem 1rem 1.5rem 1.5rem" }} src={`${userAuthentication.apiEndPoint}/property-details/images/${props.displayDetails.gallery_id}`} alt="house-img" />
             <div className="house-card-details" style={{ margin: "1.5 1.5 0 1.5", paddingBottom: "1rem" }}>
                 <div style={{ display: "flex", paddingBottom: "1rem", borderBottom: "1px solid black" }}>
                     <div style={resultStyle}>

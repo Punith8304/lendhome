@@ -12,12 +12,12 @@ function NextPage(props) {
     const currentPage = location.pathname.split("/").pop();
     async function handleSubmit() {
         try {
-            const result = await axios.post(`http://localhost:8000/upload/${currentPage}-details`, props.details, { withCredentials: true })
+            const result = await axios.post(`${userAuthentication.apiEndPoint}/upload/${currentPage}-details`, props.details, { withCredentials: true })
             const nextIndex = pages.indexOf(currentPage) + 1;
             alert("hello world");
             console.log(props.details)
 
-            const completedPropertyList = await axios.get("http://localhost:8000/property-details/completed-properties-list", { withCredentials: true })
+            const completedPropertyList = await axios.get(`${userAuthentication.apiEndPoint}/property-details/completed-properties-list`, { withCredentials: true })
             setUserAuthentication(prev => {
                 return {
                     ...prev,

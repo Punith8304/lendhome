@@ -1,8 +1,9 @@
-import React, { useEffect, useRef, useState } from "react"
+import React, { useEffect, useRef, useState, useContext } from "react"
 import "./FullResult.css"
 import Button from '@mui/material/Button'
 import axios from "axios"
 import { useLocation, useNavigate } from "react-router-dom";
+import { loginStatusContext } from "../../../../App.jsx";
 
 
 import { MdTableRestaurant, MdFamilyRestroom, MdBalcony, MdEmail } from "react-icons/md";
@@ -21,6 +22,7 @@ import ImageCarousel from "./ImageCarousel.jsx";
 
 function FullResult() {
     const navigate = useNavigate()
+    const { userAuthentication, setUserAuthentication } = useContext(loginStatusContext)
     const [details, setDetails] = useState({
         userDetails: {
             user_id: "",
@@ -109,7 +111,7 @@ function FullResult() {
     async function handleAddToWishList() {
         const querySearchParameter = new URLSearchParams(location.search)
         const houseId = querySearchParameter.get("id")
-        const result = await axios.post("http://localhost:8000/user-property/add-to-wishlist", { houseId: houseId }, { withCredentials: true })
+        const result = await axios.post(`${userAuthentication.apiEndPoint}/user-property/add-to-wishlist`, { houseId: houseId }, { withCredentials: true })
         if (result.data.status === 200) {
             navigate('/wish-list')
         } else {
@@ -120,7 +122,7 @@ function FullResult() {
         (async function () {
             const querySearchParameter = new URLSearchParams(location.search)
             const houseId = querySearchParameter.get("id")
-            const result = await axios.post("http://localhost:8000/property-details/get-full-house-details", { houseId: houseId }, { withCredentials: true })
+            const result = await axios.post(`${userAuthentication.apiEndPoint}/property-details/get-full-house-details`, { houseId: houseId }, { withCredentials: true })
             setDetails(result.data.data)
         })()
     }, [])
