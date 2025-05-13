@@ -52,7 +52,9 @@ function NavBar() {
   }
   async function handleLogout() {
     const response = await axios.get(`${userAuthentication.apiEndPoint}/user/logout`, { withCredentials: true })
-    setUserAuthentication({ login: !response.data.logoutStatus })
+    setUserAuthentication(prev => {
+      return { login: !response.data.logoutStatus, apiEndPoint: prev.apiEndPoint }
+    })
     setProfileToggle(false)
     navigate("/")
   }
