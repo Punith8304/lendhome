@@ -1,10 +1,38 @@
 const areaCoordinates = {
-        hyderabad: "circle:20000@17.366,78.476",
-        bangalore: "circle:25000@12.971599,77.594566",
-        chennai: "circle:20000@13.0843,80.2705",
-        delhi: "circle:30000@28.7041,77.1025",
-        mumbai: "circle:20000@19.0760,72.8777",
-        pune: "circle:10000@18.5204,73.8567",
-        kolkata: "circle:15000@22.5744,88.3629"
+        hyderabad: {
+            latitude: 17.366, 
+            longitude: 78.476,
+            degrees: 0.27
+        },
+        bangalore: {
+            latitude: 12.9716,
+            longitude: 77.5946,
+            degrees: 0.30
+        },
+        chennai: {
+            latitude: 13.0843,
+            longitude: 80.2705,
+            degrees: .24
+        },
+        delhi: {
+            latitude: 28.6815,
+            longitude: 77.2228,
+            degrees: 0.40
+        },
+        mumbai: {
+            latitude: 19.0760,
+            longitude: 72.8777,
+            degrees: 0.27
+        },
+        pune: {
+            latitude: 18.5204,
+            longitude: 73.8567,
+            degrees: 0.22
+        },
+        kolkata: {
+            latitude: 22.5744,
+            longitude: 88.3629,
+            degrees: 0.17
+        }
     }
 export default areaCoordinates;

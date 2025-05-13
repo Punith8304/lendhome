@@ -28,9 +28,7 @@ function Login() {
       event.preventDefault()
       const loginStatus = await axios.post(`${userAuthentication.apiEndPoint}/user/login`, loginCredentials, { withCredentials: true })
       if (loginStatus.data.login) {
-        setUserAuthentication(prev => {
-          return { ...loginStatus.data, apiEndPoint: prev.apiEndPoint }
-        })
+        setUserAuthentication(loginStatus.data)
         navigate(pathname === "/login" ? "/" : pathname)
       } else {
         setLoginError({

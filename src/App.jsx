@@ -20,14 +20,15 @@ import MyProperties from "./components/pages/results/myProperties/MyProperties.j
 import FullResult from "./components/pages/results/mainResult/FullResult.jsx";
 export const loginStatusContext = createContext()
 function App() {
-  const apiEndPoint = {apiEndPoint: "http://localhost:8000/api"};   {/*"https://lendhome.in/api"*/}
+  const apiEndPoint = "https://lendhome.in/api"
   const [userAuthentication, setUserAuthentication] = useState({ login: false, ...apiEndPoint })
   useEffect(() => {
     (async () => {
-      const authenticationStatus = await axios.get(`${apiEndPoint.apiEndPoint}/authentication/check-authentication`, { withCredentials: true })
+      alert(`${apiEndPoint}/authentication/check-authentication`)
+      const authenticationStatus = await axios.get(`${apiEndPoint}/authentication/check-authentication`, { withCredentials: true })
       if (authenticationStatus.data.login) {
         console.log(authenticationStatus.data)
-        setUserAuthentication({...authenticationStatus.data, ...apiEndPoint})
+        setUserAuthentication(authenticationStatus.data, ...apiEndPoint)
         /* gives response in the fromat => {
           login: true,
           user: {

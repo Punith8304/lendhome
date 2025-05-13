@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect, useContext } from 'react'
+import React, { useState, useRef, useEffect, createContext } from 'react'
 import houseImage from "../../../images/house.jpg";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass } from '@fortawesome/free-solid-svg-icons'
@@ -9,9 +9,8 @@ import bridge from "../../../images/bridge.jpg"
 import axios from "axios"
 import "./Home.css"
 import areaCoordinates from '../../utils/cityCoordinates.jsx';
-import { loginStatusContext } from '../../../App.jsx';
+export const resultContext = createContext()
 function Home() {
-    const { userAuthentication, setUserAuthentication } = useContext(loginStatusContext)
     const inputRef = useRef()
     const navigate = useNavigate()
     const [searchDetails, setSearchDetails] = useState({
@@ -23,7 +22,34 @@ function Home() {
         buyButton: false,
         rentButton: true
     })
-    const [suggestions, setSuggestions] = useState()
+
+
+
+    const autoComplete = new window.google.maps.places.Autocomplete(inputRef.current, {
+        bounds: {
+            north: areaCoordinates[searchDetails.city].latitude + areaCoordinates[searchDetails.city].degrees,
+            south: areaCoordinates[searchDetails.city].latitude - areaCoordinates[searchDetails.city].degrees,
+            east: areaCoordinates[searchDetails.city].longitude + areaCoordinates[searchDetails.city].degrees,
+            west: areaCoordinates[searchDetails.city].longitude - areaCoordinates[searchDetails.city].degrees
+        },
+        strictBounds: true
+    })
+    autoComplete.addListener('place_changed', () => {
+        const place = autoComplete.getPlace()
+        if (!place.geometry || !place.geometry.location) {
+            setMessage(true)
+        }
+        if (place.geometry.viewport || place.geometry.location) {
+            setSearchDetails(prev => {
+                return {
+                    ...prev,
+                    areaName: inputRef.current.value,
+                    latitude: place.geometry.location.lat(),
+                    longitude: place.geometry.location.lng()
+                }
+            })
+        }
+    })
 
     function handleClick(event) {
         const buttonclicked = event.target.name;
@@ -51,24 +77,13 @@ function Home() {
                 setMessage(true)
             }
         } catch (error) {
-            console.log(error)
-        }
-    }
 
+        }
+
+    }
     function postHomePostHouse() {
         navigate("/owner")
     }
-
-
-    useEffect(() => {
-        (async function() {
-            const result = await axios.post(`${userAuthentication.apiEndPoint}/placesuggestions/getPlaceDetails`, {textInput: searchDetails.areaName, cityLocation: areaCoordinates[searchDetails.city]})
-            setSuggestions(result.data)
-        })()
-    }, [searchDetails.areaName])
-    useEffect(() => {
-        console.log(suggestions)
-    }, [suggestions])
     return <div>
         <div className="home-header">
             <img className="house" src={houseImage} alt="House Image" />
