@@ -53,7 +53,9 @@ function Signup() {
     async function handleSignUp() {
         const signUpResult = await axios.post(`${userAuthentication.apiEndPoint}/user/signup`, signUpCredentials, { withCredentials: true })
         if (signUpResult.data.login) {
-            setUserAuthentication(signUpResult.data)
+            setUserAuthentication(prev => {
+                return { ...signUpResult.data, apiEndPoint: prev.apiEndPoint }
+            })
             setSignUpStatus({ status: false, message: "" })
             navigate(pathname === "/signup" ? "/" : pathname)
         } else {
