@@ -20,7 +20,7 @@ import MyProperties from "./components/pages/results/myProperties/MyProperties.j
 import FullResult from "./components/pages/results/mainResult/FullResult.jsx";
 export const loginStatusContext = createContext()
 function App() {
-  const apiEndPoint = {apiEndPoint: "http://localhost:8000/api"};   {/*"https://lendhome.in/api"*/}
+  const apiEndPoint = {apiEndPoint: "https://lendhome.in/api"}
   const [userAuthentication, setUserAuthentication] = useState({ login: false, ...apiEndPoint })
   useEffect(() => {
     (async () => {

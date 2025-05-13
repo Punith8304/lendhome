@@ -9,7 +9,7 @@ import bridge from "../../../images/bridge.jpg"
 import axios from "axios"
 import "./Home.css"
 import areaCoordinates from '../../utils/cityCoordinates.jsx';
-export const resultContext = createContext()
+
 function Home() {
     const inputRef = useRef()
     const navigate = useNavigate()
