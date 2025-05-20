@@ -1,0 +1,249 @@
+/* .details-property {
+    display: flex;
+    flex-direction: column;
+    width: 200px;
+    justify-content: space-between;
+    height: 200px;
+}
+.details-property .property-button {
+    padding: 10px;
+    width: 150px;
+    text-decoration: none;
+    color: black;
+}
+.property-page {
+    display: flex;
+    flex-direction: row;
+}
+#apartment-type, #bhk-type, #floor, #total-floor, #parking, #furninshing, #built-area, #property-age, #facing, #city,
+#availability, #rent-money, #deposit, #rent-negotiable, #monthly-maintenance, #bathroom, #balcony, #yes, #no, #property-show,
+#file-input, #file-submit, #secondary-number, .available-amenities input, #start-schedule, #end-schedule, #allday, #water-supply, #everyday, #furnishing {
+    width: auto;
+    padding: 1rem;
+    margin-left: 0.5rem;
+    margin-top: 1rem;
+    margin-right: 0.5rem;
+    margin-bottom: 1.2rem;
+}
+#locality, #landmark {
+    width: 50%;
+    padding: 1rem;
+    margin-left: 0.5rem;
+    margin-bottom: 1.2rem;
+    margin-top: 1rem;
+}
+.built-area-input input::-webkit-outer-spin-button,
+.built-area-input input::-webkit-inner-spin-button,
+.rent input::-webkit-inner-spin-button,
+.rent input::-webkit-outer-spin-button,
+#secondary-number::-webkit-outer-spin-button,
+#secondary-number::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+#rent, #lease, #rent-negotiable, #yes, #no, .available-amenities input {
+    margin-left: 50px;
+}
+#anyone, #family, #bachelor-female, #bachelor-male, #company {
+    width: auto;
+    padding: 1rem;
+    margin-left: 3rem;
+    margin-right: 1rem;
+    margin-top: 1rem;
+}
+#parking, #furnishing, #property-show {
+    margin-right: 9rem;
+}
+#description, #direction {
+    width: 100%;
+    height: 6rem;
+    margin-top: 2rem;
+}
+textarea:focus {
+    outline: none;
+}
+#everyday, #weekday, #weekend {
+    white-space: pre;
+    padding: 2rem;
+    margin-right: 1rem;
+    margin-top: 1.5rem;
+    background-color: white;
+}
+#rent-money, #bhk-type, #floor, #property-age, #city, #rent-amount, #bathroom, #balcony, #start-schedule {
+    margin-right: 70px;
+}
+.house-card-details {
+    padding: 1.8rem 0;
+    width: fit-content;
+    height: 20%;
+    border: double black;
+    margin: 1.5rem;
+}
+.house-card-details p {
+    font-size: small;
+}
+
+.house-card-details div div {
+    width: 50%;
+    padding: 1rem auto;
+}
+ */
+
+
+
+ /* Root container using Flexbox */
+/* Base layout container */
+.layout-container {
+  display: flex;
+  min-height: 100vh;
+  background-color: #f9f9f9;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+/* Sidebar area */
+.sidebar {
+  width: 22%;
+  min-width: 240px;
+  background-color: #ffffff;
+  border-right: 1px solid #e0e0e0;
+  padding: 1.5rem 1rem;
+  box-shadow: 2px 0 8px rgba(0, 0, 0, 0.04);
+  transition: all 0.3s ease;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+/* Main content area */
+.content-area {
+  flex: 1;
+  padding: 2rem 3rem;
+  overflow-x: hidden;
+  background-color: #fcfcfc;
+}
+
+/* Responsive adjustments */
+@media (max-width: 1024px) {
+  .layout-container {
+    flex-direction: column;
+  }
+
+  .sidebar {
+    width: 100%;
+    min-width: unset;
+    border-right: none;
+    border-bottom: 1px solid #e0e0e0;
+    padding: 1rem;
+    box-shadow: none;
+  }
+
+  .content-area {
+    padding: 1.5rem;
+  }
+}
+
+
+
+
+/* Sidebar title */
+.sidebar-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  margin-bottom: 1rem;
+  color: #333;
+}
+
+/* Stepper navigation */
+.property-stepper {
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+/* Individual step */
+.stepper-item {
+  display: flex;
+  align-items: center;
+  padding: 0.6rem 0.8rem;
+  gap: 0.75rem;
+  border-radius: 8px;
+  text-decoration: none;
+  color: #444;
+  background-color: transparent;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+.stepper-item:hover {
+  background-color: #f0f4f8;
+}
+
+.stepper-item.active {
+  background-color: #e3f2fd;
+  color: #1976d2;
+  font-weight: 600;
+}
+
+.stepper-item.completed {
+  color: #4caf50;
+}
+
+/* Icon section */
+.stepper-icon {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 24px;
+  height: 24px;
+}
+
+/* Connector line */
+.stepper-connector {
+  height: 1px;
+  background-color: #e0e0e0;
+  margin: 0.2rem 0 0.2rem 2rem;
+}
+
+/* Step label text */
+.step-label {
+  font-size: 0.95rem;
+}
+
+/* Info box at the bottom */
+.sidebar-info {
+  margin-top: 2rem;
+  display: flex;
+  align-items: flex-start;
+  gap: 0.5rem;
+  font-size: 0.9rem;
+  background-color: #e3f2fd;
+  padding: 1rem;
+  border-left: 4px solid #1976d2;
+  border-radius: 6px;
+  color: #333;
+}
+
+
+
+
+@media (max-width: 480px) {
+  .property-stepper {
+    overflow-x: auto;
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+  }
+
+  .stepper-item {
+    flex-direction: column;
+    align-items: center;
+    font-size: 0.8rem;
+    padding: 0.5rem;
+  }
+
+  .step-label {
+    text-align: center;
+  }
+
+  .stepper-connector {
+    display: none;
+  }
+}

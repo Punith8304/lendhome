@@ -1,0 +1,119 @@
+/* .login-form {
+    border: 1px solid black;
+    padding: 3rem;
+    display: inline-block;
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    width: fit-content;
+    height: fit-content;
+    margin: auto;
+    background-color: #f3f3f3;
+    color: #2A3335;
+}
+.login-form h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+}
+.login-form input {
+    margin: 1rem auto 1rem auto;
+    height: 2.2rem;
+    width: 15vw;
+    padding-left: 1rem;
+}
+.login-form-submit-details button, .login-form-type button {
+    padding: 0.2rem;
+    font-size: small;
+    width: 4vw;
+    height: 4vh;
+}
+.login-form-submit-details {
+    text-align: center;
+    padding-bottom: 1rem;
+    padding-top: 0.5rem;
+} */
+
+
+.auth-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background: #f2f4f8;
+    padding: 2rem;
+}
+
+.auth-form {
+    background: #fff;
+    padding: 2.5rem;
+    border-radius: 12px;
+    box-shadow: 0 8px 20px rgba(0, 0, 0, 0.1);
+    max-width: 400px;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-form h2 {
+    text-align: center;
+    margin-bottom: 1.5rem;
+    color: #fd3752;
+}
+
+.auth-form input {
+    padding: 0.8rem 1rem;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    font-size: 1rem;
+    transition: border-color 0.2s;
+}
+
+.auth-form input:focus {
+    outline: none;
+    border-color: #fd3752;
+}
+
+.auth-form button {
+    padding: 0.9rem;
+    background-color: #fd3752;
+    border: none;
+    color: white;
+    border-radius: 8px;
+    font-size: 1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.auth-form button:hover {
+    background-color: #e3324a;
+}
+
+.auth-switch {
+    text-align: center;
+    margin-top: 1rem;
+    font-size: 0.9rem;
+    color: #555;
+}
+
+.auth-switch span {
+    color: #fd3752;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.error-msg {
+    color: red;
+    font-size: 0.8rem;
+    margin: -0.5rem 0 0.5rem;
+}
+
+/* Mobile responsiveness */
+@media (max-width: 480px) {
+    .auth-form {
+        padding: 2rem 1.5rem;
+    }
+}

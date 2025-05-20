@@ -1,0 +1,84 @@
+.no-properties {
+  text-align: center;
+  padding: 3rem 1.5rem;
+  background-color: #fef5f6;
+  border-radius: 16px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.05);
+  max-width: 600px;
+  margin: 4rem auto;
+}
+
+.no-properties img {
+  width: 220px;
+  max-width: 100%;
+  margin-bottom: 1.5rem;
+  animation: float 3s ease-in-out infinite;
+}
+
+@keyframes float {
+  0%, 100% {
+    transform: translateY(0px);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+.no-properties h2 {
+  color: #fd3752;
+  font-size: 2rem;
+  margin-bottom: 0.8rem;
+}
+
+.no-properties p {
+  color: #555;
+  font-size: 1.05rem;
+  margin-bottom: 2rem;
+}
+
+.no-properties button {
+  background-color: #fd3752;
+  color: white;
+  padding: 0.85rem 1.8rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 10px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+.button-wrapper {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+
+.start-posting-btn:hover {
+  background-color: #e3324a;
+}
+
+.no-properties button:hover {
+  background-color: #e3324a;
+}
+
+/* Responsive */
+@media (max-width: 600px) {
+  .no-properties {
+    padding: 2rem 1rem;
+  }
+
+  .start-posting-btn {
+    width: 100%;
+  }
+
+  .no-properties h2 {
+    font-size: 1.6rem;
+  }
+
+  .no-properties p {
+    font-size: 0.95rem;
+  }
+}

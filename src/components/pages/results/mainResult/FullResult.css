@@ -1,4 +1,4 @@
-.full-result-property-details {
+/* .full-result-property-details {
     display: flex;
     margin: auto;
 }
@@ -133,4 +133,153 @@
 }
 .table-address-data {
     width: 30vw;
+} */
+
+
+
+.full-result-container {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    padding: 2rem;
+    color: #333;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.section {
+    margin: 2rem 0;
+    border-top: 1px solid #ddd;
+    padding-top: 1.5rem;
+}
+
+.header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.overview {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: space-between;
+}
+
+.info-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 1rem;
+}
+
+.info-grid div {
+    background-color: #f9f9f9;
+    padding: 1rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 4px rgba(0,0,0,0.05);
+}
+
+.info-grid div span {
+    display: block;
+    font-size: 0.85rem;
+    color: #555;
+    margin-top: 0.3rem;
+}
+
+.owner-card {
+    background-color: #f0f4f8;
+    border-radius: 12px;
+    padding: 1rem;
+    flex: 1;
+    box-shadow: 0 2px 6px rgba(0,0,0,0.05);
+}
+
+.owner-card ul {
+    list-style: none;
+    padding: 0;
+}
+
+.owner-card li {
+    margin: 0.5rem 0;
+    display: flex;
+    align-items: center;
+}
+
+.owner-card svg {
+    margin-right: 0.5rem;
+    color: #007bff;
+}
+
+.carousel {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+    gap: 1rem;
+    margin-top: 1rem;
+}
+
+.carousel-image-wrapper {
+    border: 1px solid #eee;
+    padding: 0.5rem;
+    border-radius: 8px;
+    background: white;
+    transition: transform 0.3s ease;
+}
+
+.carousel-image-wrapper:hover {
+    transform: scale(1.02);
+}
+
+.carousel-image {
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+}
+
+.action-buttons {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+    gap: 1rem;
+}
+
+@media (max-width: 768px) {
+    .overview {
+        flex-direction: column;
+    }
+
+    .info-grid {
+        grid-template-columns: 1fr;
+    }
+    .secondary-wishlist-button {
+        display: none;
+    }
+}
+
+
+.button {
+  padding: 12px 24px;
+  font-size: 16px;
+  font-weight: 600;
+  border: none;
+  border-radius: 10px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.08);
+}
+
+/* Add to Wishlist - soft crimson */
+.button-wishlist {
+  background-color: #c0392b;
+  color: #fff;
+}
+
+.button-wishlist:hover {
+  background-color: #a93226;
+}
+
+/* Get Owner Details - deep navy */
+.button-owner {
+  background-color: #34495e;
+  color: #fff;
+}
+
+.button-owner:hover {
+  background-color: #2c3e50;
 }

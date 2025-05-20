@@ -1,4 +1,4 @@
-/* Root form container */
+/* Already included from Property form */
 .property-form {
   max-width: 800px;
   margin: auto;
@@ -11,14 +11,12 @@
   gap: 1.8rem;
 }
 
-/* Group of inputs */
 .property-group {
   display: grid;
   grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
   gap: 1.5rem;
 }
 
-/* Label styling */
 .property-form label {
   font-size: 0.95rem;
   font-weight: 500;
@@ -27,8 +25,8 @@
   display: block;
 }
 
-/* Select and input fields */
 .property-form select,
+.property-form input[type="text"],
 .property-form input[type="number"] {
   width: 100%;
   padding: 0.6rem 0.75rem;
@@ -41,19 +39,24 @@
 }
 
 .property-form select:focus,
-.property-form input[type="number"]:focus {
+.property-form input:focus {
   border-color: #1976d2;
   outline: none;
   background-color: #fff;
 }
 
-/* Built-up area input block */
 .built-area-input {
   display: flex;
   flex-direction: column;
 }
 
-/* Responsive tweaks */
+.error-message {
+  color: red;
+  font-size: 0.85rem;
+  margin-top: 0.4rem;
+}
+
+/* Responsive tweak */
 @media (max-width: 768px) {
   .property-form {
     padding: 1.5rem;

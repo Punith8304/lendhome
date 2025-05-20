@@ -4,6 +4,7 @@ import Button from '@mui/material/Button';
 import axios from "axios";
 import { useLocation } from "react-router-dom";
 import { loginStatusContext } from "../../../../App.jsx";
+import "./NextPage.css"
 function NextPage(props) {
     const pages = ["property", "locality", "rental", "amenities", "gallery", "schedule"]
     const { userAuthentication, setUserAuthentication } = useContext(loginStatusContext)
@@ -14,9 +15,7 @@ function NextPage(props) {
         try {
             const result = await axios.post(`${userAuthentication.apiEndPoint}/upload/${currentPage}-details`, props.details, { withCredentials: true })
             const nextIndex = pages.indexOf(currentPage) + 1;
-            alert("hello world");
             console.log(props.details)
-
             const completedPropertyList = await axios.get(`${userAuthentication.apiEndPoint}/property-details/completed-properties-list`, { withCredentials: true })
             setUserAuthentication(prev => {
                 return {
@@ -39,8 +38,21 @@ function NextPage(props) {
             console.log(error)
         }
     }
-    return <div className="details-submit-button" onClick={handleSubmit}>
-        <Button variant="contained">{currentPage === "schedule" ? "Save" : "Save & next"}</Button>
-    </div>
+    // return <div className="details-submit-button" onClick={handleSubmit}>
+    //     <Button variant="contained">{currentPage === "schedule" ? "Save" : "Save & next"}</Button>
+    // </div>
+
+    return (
+        <div className="next-page-button-container">
+            <Button
+                variant="contained"
+                color="primary"
+                onClick={handleSubmit}
+                className="next-page-button"
+            >
+                {currentPage === "schedule" ? "Save" : "Save & Next"}
+            </Button>
+        </div>
+    );
 }
 export default NextPage;

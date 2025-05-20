@@ -1,4 +1,4 @@
-.result-box {
+/* .result-box {
     border: 1px solid black;
     width: 60vw;
     margin-left: 1.5rem;
@@ -56,4 +56,71 @@
 }
 .display-house-properties-card {
     margin-bottom: 2rem;
+} */
+
+
+
+.results-container {
+    padding: 2rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.property-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 2rem;
+    justify-content: center;
+    width: 100%;
+}
+
+.no-results {
+    text-align: center;
+    padding: 4rem 1rem;
+    background-color: #f8f9fa;
+    border: 1px solid #ccc;
+    border-radius: 8px;
+    max-width: 500px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.no-results h2 {
+    color: #333;
+    margin-bottom: 0.5rem;
+}
+
+.no-results p {
+    color: #666;
+    font-size: 1rem;
+}
+
+@media screen and (max-width: 768px) {
+    .property-list {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    .results-container {
+        padding: 1rem;
+    }
+
+    .no-results {
+        padding: 2rem 1rem;
+    }
+}
+.back-button {
+    margin-top: 1.5rem;
+    padding: 0.75rem 1.5rem;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 6px;
+    font-size: 1rem;
+    cursor: pointer;
+    transition: background-color 0.2s ease-in-out;
+}
+
+.back-button:hover {
+    background-color: #0056b3;
 }

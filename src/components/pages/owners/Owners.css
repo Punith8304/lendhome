@@ -1,4 +1,4 @@
-.post-title {
+/* .post-title {
     width: 75%;
     margin: auto;
     display: flex;
@@ -68,4 +68,150 @@
 }
 .post-button:hover {
     background-color: #e3324a;
+} */
+
+
+.owners-container {
+  font-family: 'Poppins', sans-serif;
+  padding: 2rem 1rem;
+  max-width: 1200px;
+  margin: auto;
+  text-align: center;
+}
+
+.intro-section {
+  background-color: #fff6f7;
+  border-radius: 15px;
+  padding: 2rem;
+  margin-bottom: 2rem;
+  box-shadow: 0 3px 10px rgba(0,0,0,0.05);
+}
+
+.intro-section h1 {
+  font-size: 2rem;
+  color: #fd3752;
+  margin-bottom: 1rem;
+}
+
+.intro-section .subtext {
+  font-size: 1.1rem;
+  color: #555;
+  margin-bottom: 1.5rem;
+}
+
+.start-posting-btn {
+  background-color: #fd3752;
+  color: white;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.start-posting-btn:hover {
+  background-color: #e3324a;
+}
+
+.looking-link {
+  margin-top: 1rem;
+  font-size: 0.95rem;
+  color: #555;
+}
+
+.looking-link a {
+  color: #007bff;
+  text-decoration: underline;
+}
+
+.info-cards {
+  display: flex;
+  gap: 1rem;
+  flex-wrap: wrap;
+  justify-content: center;
+  margin: 2rem 0;
+}
+
+.info-card {
+  background-color: #f9f9f9;
+  padding: 1.5rem;
+  border-radius: 12px;
+  width: 280px;
+  box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+  transition: transform 0.2s ease;
+}
+
+.info-card:hover {
+  transform: translateY(-5px);
+}
+
+.info-card h3 {
+  color: #fd3752;
+  margin-bottom: 0.5rem;
+}
+
+.info-card p {
+  color: #555;
+  font-size: 0.95rem;
+}
+
+.form-section {
+  margin-top: 2rem;
+}
+
+.form-section h2 {
+  color: #333;
+  margin-bottom: 1rem;
+}
+
+.form-section select {
+  padding: 0.8rem;
+  border-radius: 8px;
+  border: 1px solid #ccc;
+  font-size: 1rem;
+  min-width: 250px;
+}
+
+/* Responsive */
+@media (max-width: 768px) {
+  .info-cards {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .start-posting-btn {
+    width: 100%;
+  }
+
+  .form-section select {
+    width: 100%;
+  }
+}
+
+.intro-buttons {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 1rem;
+  margin-bottom: 1rem;
+}
+
+.my-properties-btn {
+  background-color: #34495e;
+  color: white;
+  padding: 0.9rem 2rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 8px;
+  font-weight: bold;
+  text-decoration: none;
+  display: inline-block;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+.my-properties-btn:hover {
+  background-color: #2c3e50;
 }

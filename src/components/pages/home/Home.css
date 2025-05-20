@@ -1,4 +1,4 @@
-.house {
+/* .house {
     height: 550px;
     width: 85%;
     border-radius: 35px;
@@ -172,4 +172,442 @@ input:focus {
 }
 .post-button-home:hover {
     background-color: #e3324a;
+} */
+
+
+
+/* ===========================
+   GENERAL RESET / BASE STYLES
+============================= */
+/* * {
+    box-sizing: border-box;
 }
+
+body {
+    margin: 0;
+    font-family: "Poppins", sans-serif;
+    background-color: #f5f5f5;
+}
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
+/* ===========================
+   HEADER SECTION
+============================= */
+/* .home-header {
+    position: relative;
+    text-align: center;
+    overflow: hidden;
+}
+
+.house {
+    width: 100%;
+    height: 60vh;
+    object-fit: cover;
+    border-radius: 0 0 30px 30px;
+}
+
+.disclaimer {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    font-size: 2.5rem;
+    font-weight: 600;
+    text-align: center;
+    padding: 1rem;
+    width: 90%;
+    background: rgba(0, 0, 0, 0.4);
+    border-radius: 1rem;
+}
+
+.disclaimer .description {
+    font-size: 1.1rem;
+    font-weight: 400;
+    line-height: 1.6;
+} */
+
+/* ===========================
+   SEARCH INPUT SECTION
+============================= 
+.input-field {
+    background-color: white;
+    border-radius: 1rem;
+    padding: 2rem;
+    width: 90%;
+    max-width: 900px;
+    margin: -4rem auto 2rem;
+    box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.input-field h2 {
+    margin-bottom: 1.5rem;
+    font-size: 1.5rem;
+    color: #333;
+}
+
+.input-field .rent-button,
+.input-field .buy-button {
+    padding: 0.5rem 1.2rem;
+    border: none;
+    border-radius: 5px;
+    margin: 0 0.5rem;
+    font-weight: 600;
+    background-color: white;
+    color: #333;
+    border: 1px solid #ccc;
+    transition: all 0.2s ease;
+}
+
+.rent-button:hover,
+.buy-button:hover {
+    cursor: pointer;
+    background-color: #fd3752;
+    color: white;
+    border: 1px solid #fd3752;
+}
+
+.input-city {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+#cityRent {
+    height: 3rem;
+    padding: 0 1rem;
+    border-radius: 5px;
+    font-size: 1rem;
+    border: 1px solid #ccc;
+}
+
+.input-text-city {
+    flex: 1;
+    min-width: 200px;
+    height: 3rem;
+    border: 1px solid #ccc;
+    padding-left: 1rem;
+    font-size: 1rem;
+    border-radius: 5px;
+}
+
+.search-icon {
+    margin-left: 10px;
+    color: gray;
+}
+
+.search-implement {
+    height: 3rem;
+    padding: 0 1.5rem;
+    background-color: #fd3752;
+    border: none;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.search-implement:hover {
+    background-color: #e3324a;
+}
+
+.error-message {
+    color: red;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+}
+
+/* ===========================
+   POST BUTTON SECTION
+============================= 
+.post-button-home-page {
+    width: 100%;
+    text-align: center;
+    margin: 2rem 0;
+}
+
+.post-button-home {
+    padding: 1rem 2rem;
+    border: none;
+    border-radius: 5px;
+    background-color: #fd3752;
+    color: white;
+    font-size: 1.1rem;
+    font-weight: bold;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+.post-button-home:hover {
+    background-color: #e3324a;
+}
+
+ ===========================
+   MEDIA QUERIES
+============================= 
+@media (max-width: 768px) {
+    .disclaimer {
+        font-size: 1.5rem;
+        padding: 1rem;
+    }
+
+    .input-city {
+        flex-direction: column;
+    }
+
+    .input-text-city,
+    .search-implement,
+    #cityRent {
+        width: 100%;
+    }
+
+    .input-field h2 {
+        font-size: 1.2rem;
+    }
+
+    .input-field .rent-button,
+    .input-field .buy-button {
+        width: 40%;
+        margin-bottom: 1rem;
+    }
+}
+
+@media (max-width: 480px) {
+    .disclaimer {
+        font-size: 1.2rem;
+    }
+
+    .house {
+        height: 40vh;
+    }
+} */
+
+
+
+
+.home-container {
+    font-family: 'Poppins', sans-serif;
+    padding: 2rem 1rem;
+    max-width: 1200px;
+    margin: auto;
+}
+
+.main-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+
+.main-header h1 {
+    font-size: 2.5rem;
+    color: #fd3752;
+}
+
+.subheader {
+    color: #555;
+    font-size: 1.2rem;
+    margin-top: 0.5rem;
+}
+
+.search-section {
+    background: #f9f9f9;
+    padding: 2rem;
+    border-radius: 15px;
+    box-shadow: 0 2px 10px rgba(0, 0, 0, 0.05);
+    margin-bottom: 2rem;
+}
+
+.buttons-toggle {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1rem;
+}
+
+.buttons-toggle button {
+    flex: 1;
+    padding: 0.6rem 1rem;
+    border: none;
+    border-radius: 8px;
+    font-size: 1rem;
+    cursor: pointer;
+    background-color: #ddd;
+    color: #333;
+    transition: 0.2s ease-in-out;
+}
+
+.buttons-toggle .active {
+    background-color: #fd3752;
+    color: white;
+}
+
+.search-bar {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.8rem;
+    align-items: center;
+    margin-top: 1rem;
+}
+
+.search-bar select,
+.search-bar input {
+    padding: 0.8rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    flex: 1;
+    min-width: 200px;
+}
+
+.search-bar button {
+    background-color: #fd3752;
+    color: white;
+    padding: 0.8rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    cursor: pointer;
+    font-weight: bold;
+    transition: background 0.2s ease;
+}
+
+.search-bar button:hover {
+    background-color: #e3324a;
+}
+
+.search-icon {
+    margin-right: 0.5rem;
+    color: #666;
+}
+
+.search-input {
+    display: flex;
+    align-items: center;
+    flex: 1;
+}
+
+.hint-text {
+    margin-top: 0.8rem;
+    font-size: 0.85rem;
+    color: #888;
+    animation: fadeIn 1.5s ease;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; }
+    to { opacity: 1; }
+}
+
+.error-text {
+    color: red;
+    font-size: 0.85rem;
+    margin-top: 0.5rem;
+}
+
+.popular-areas {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 1rem;
+}
+
+.popular-areas span {
+    background-color: #eee;
+    padding: 0.5rem 1rem;
+    border-radius: 20px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: 0.2s ease;
+}
+
+.popular-areas span:hover {
+    background-color: #fd3752;
+    color: white;
+}
+
+.features-section {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: space-between;
+    margin-top: 2rem;
+}
+
+.feature {
+    flex: 1 1 30%;
+    background-color: white;
+    padding: 1.5rem;
+    border-radius: 10px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+    text-align: center;
+}
+
+.feature h3 {
+    color: #fd3752;
+    margin-bottom: 0.5rem;
+}
+
+.trusted-banner {
+    text-align: center;
+    background-color: #f2f6fa;
+    padding: 1rem;
+    margin-top: 2rem;
+    font-weight: 500;
+    color: #333;
+    border-radius: 10px;
+}
+
+.post-button-wrapper {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.post-button-wrapper button {
+    background-color: #fd3752;
+    color: white;
+    padding: 1rem 2rem;
+    font-size: 1rem;
+    border: none;
+    border-radius: 8px;
+    font-weight: bold;
+    cursor: pointer;
+}
+
+.post-button-wrapper button:hover {
+    background-color: #e3324a;
+}
+
+@media (max-width: 768px) {
+    .search-bar {
+        flex-direction: column;
+    }
+    .features-section {
+        flex-direction: column;
+    }
+}
+
+.home-container {
+    color: #222; /* or try #333 for slightly bolder text */
+}
+
+.search-section {
+    background: #ffffff; /* change from #f9f9f9 for more contrast */
+    color: #222;
+}
+
+.feature {
+    background-color: #ffffff;
+    color: #333;
+}
+
+.trusted-banner {
+    background-color: #e8f0f8; /* stronger background for contrast */
+    color: #222;
+}
+

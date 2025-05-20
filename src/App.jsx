@@ -22,29 +22,49 @@ export const loginStatusContext = createContext()
 function App() {
   const apiEndPoint = {apiEndPoint: "https://lendhome.in/api"}
   const [userAuthentication, setUserAuthentication] = useState({ login: false, ...apiEndPoint })
-  useEffect(() => {
-    (async () => {
-      const authenticationStatus = await axios.get(`${apiEndPoint.apiEndPoint}/authentication/check-authentication`, { withCredentials: true })
-      if (authenticationStatus.data.login) {
-        console.log(authenticationStatus.data)
-        setUserAuthentication({...authenticationStatus.data, ...apiEndPoint})
-        /* gives response in the fromat => {
-          login: true,
-          user: {
-            username: user_name,
-            useremail: user_email,
-            usermobile: user_mobile,
-            house: {
-              houseId: 392,
-              houseCreationInitialised: true,
-              currentProperty: "locality",
-              completedList: []
-            }
-          }
-        }*/
+  // useEffect(() => {
+  //   (async () => {
+  //     const authenticationStatus = await axios.get(`${apiEndPoint.apiEndPoint}/authentication/check-authentication`, { withCredentials: true })
+  //     if (authenticationStatus.data.login) {
+  //       console.log(authenticationStatus.data)
+  //       setUserAuthentication({...authenticationStatus.data, ...apiEndPoint})
+  //       /* gives response in the fromat => {
+  //         login: true,
+  //         user: {
+  //           username: user_name,
+  //           useremail: user_email,
+  //           usermobile: user_mobile,
+  //           house: {
+  //             houseId: 392,
+  //             houseCreationInitialised: true,
+  //             currentProperty: "locality",
+  //             completedList: []
+  //           }
+  //         }
+  //       }*/
+  //     }
+  //   })();
+  // }, [])
+
+  const [loading, setLoading] = useState(true);
+
+useEffect(() => {
+  (async () => {
+    try {
+      const res = await axios.get(`${apiEndPoint.apiEndPoint}/authentication/check-authentication`, { withCredentials: true });
+      if (res.data.login) {
+        setUserAuthentication({ ...res.data, ...apiEndPoint });
       }
-    })();
-  }, [])
+    } catch (err) {
+      console.error(err);
+    } finally {
+      setLoading(false);
+    }
+  })();
+}, []);
+
+if (loading) return <div>Loading...</div>; // Or a spinner
+
   return (
     <loginStatusContext.Provider value={{ userAuthentication, setUserAuthentication }} >
       <div>

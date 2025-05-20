@@ -1,0 +1,39 @@
+.wishlist-empty {
+  text-align: center;
+  padding: 4rem 2rem;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  color: #555;
+}
+
+.wishlist-empty img {
+  width: 200px;
+  margin-bottom: 1.5rem;
+  opacity: 0.85;
+}
+
+.wishlist-empty h2 {
+  font-size: 1.5rem;
+  margin-bottom: 0.5rem;
+  color: #2c3e50;
+}
+
+.wishlist-empty p {
+  font-size: 1rem;
+  margin-bottom: 1.5rem;
+  color: #7f8c8d;
+}
+
+.wishlist-empty button {
+  padding: 0.75rem 1.5rem;
+  background-color: #007bff;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.2s ease;
+}
+
+.wishlist-empty button:hover {
+  background-color: #0056b3;
+}
