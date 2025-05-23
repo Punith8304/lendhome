@@ -28,7 +28,6 @@ import { NavLink } from "react-router-dom";
 import { loginStatusContext } from "../../../../App.jsx";
 import CheckCircleIcon from '@mui/icons-material/CheckCircle';
 import InfoIcon from '@mui/icons-material/Info';
-import "./Properties.css";
 
 const pages = [
   { key: "property", label: "Property" },
