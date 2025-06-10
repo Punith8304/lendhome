@@ -164,7 +164,7 @@ function PropertyCard(props) {
     const getFullResult = () => {
         navigate(`/house?id=${props.displayDetails.house_id}`);
     };
-
+console.log(props.displayDetails, "split error cause")
     const handleWishList = async () => {
         const result = await axios.post(
             `${userAuthentication.apiEndPoint}/user-property/add-to-wishlist`,
@@ -222,6 +222,7 @@ function PropertyCard(props) {
                 setCheckWishlist(true)
             }
         })()
+        
     }, [])
 
 
@@ -262,7 +263,7 @@ function PropertyCard(props) {
                         <p>Preferred Tenants</p>
                     </div>
                     <div>
-                        <h5>{props.displayDetails.available_from.split("T")[0]}</h5>
+                        <h5>{props.displayDetails.available_from.split('T')[0]}</h5>
                         <p>Available From</p>
                     </div>
                 </div>

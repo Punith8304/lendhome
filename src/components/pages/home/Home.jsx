@@ -132,12 +132,13 @@ import { faMagnifyingGlass } from "@fortawesome/free-solid-svg-icons";
 import { useNavigate } from "react-router-dom";
 import "./Home.css";
 import areaCoordinates from "../../utils/cityCoordinates.jsx";
+import { suggestedAreaName } from "../../utils/cityNameSuggestions.jsx";
 
 function Home() {
     const inputRef = useRef();
     const navigate = useNavigate();
     const [searchDetails, setSearchDetails] = useState({
-        city: "bangalore",
+        city: "Bangalore",
         areaName: ""
     });
     const [message, setMessage] = useState(false);
@@ -192,7 +193,9 @@ function Home() {
     const postAd = () => navigate("/owner");
 
     const setQuickArea = (area) => {
+
         inputRef.current.value = area;
+        inputRef.current.focus()
         setSearchDetails(prev => ({ ...prev, areaName: area }));
     };
 
@@ -208,13 +211,13 @@ function Home() {
 
                 <div className="search-bar">
                     <select name="city" id="city" onChange={handleSearchChange} value={searchDetails.city}>
-                        <option value="bangalore">Bangalore</option>
-                        <option value="chennai">Chennai</option>
-                        <option value="delhi">Delhi</option>
-                        <option value="hyderabad">Hyderabad</option>
-                        <option value="kolkata">Kolkata</option>
-                        <option value="mumbai">Mumbai</option>
-                        <option value="pune">Pune</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Pune">Pune</option>
                     </select>
 
                     <span className="search-input">
@@ -233,10 +236,10 @@ function Home() {
                 </div>
 
                 <p className="hint-text">Start typing an area like “HSR Layout”, “Andheri”, or “Banjara Hills”</p>
-                {message && <p className="error-text">Please select area name from suggestions</p>}
+                {message && <p className="error-text">Please select area name from suggestions list</p>}
 
                 <div className="popular-areas">
-                    {["HSR Layout", "Andheri", "Banjara Hills", "Powai", "Anna Nagar"].map((area) => (
+                    {suggestedAreaName[searchDetails.city].map((area) => (
                         <span key={area} onClick={() => setQuickArea(area)}>{area}</span>
                     ))}
                 </div>

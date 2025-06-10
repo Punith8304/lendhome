@@ -712,7 +712,7 @@ function FullResult() {
 
             <div className="action-buttons">
                 
-                <button className="button button-wishlist" onClick={checkWishlist ? removeFromWishList : handleAddToWishList}>{checkWishlist ? "Remove from Wishlist" : "Add to Wishlist</button"} </button>
+                <button className="button button-wishlist" onClick={checkWishlist ? removeFromWishList : handleAddToWishList}>{checkWishlist ? "Remove from Wishlist" : "Add to Wishlist"} </button>
                 <a href="#owner-details"><button className="button button-owner" style={{ marginLeft: "1rem" }}>Get Owner Details</button></a>
             </div>
         </div>

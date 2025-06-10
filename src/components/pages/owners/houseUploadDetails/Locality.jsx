@@ -6,7 +6,7 @@ import "./properties/Locality.css";
 function Locality() {
     const inputRef = useRef()
     const [localityDetails, setLocalityDetails] = useState({
-        city: "bangalore",
+        city: "Bangalore",
         area: {
             area_name: ""
         },
@@ -103,13 +103,13 @@ function Locality() {
                         onChange={handleLocalityDetailsChange}
                         defaultValue={localityDetails.city}
                     >
-                        <option value="bangalore">Bangalore</option>
-                        <option value="chennai">Chennai</option>
-                        <option value="delhi">Delhi</option>
-                        <option value="hyderabad">Hyderabad</option>
-                        <option value="kolkata">Kolkata</option>
-                        <option value="mumbai">Mumbai</option>
-                        <option value="pune">Pune</option>
+                        <option value="Bangalore">Bangalore</option>
+                        <option value="Chennai">Chennai</option>
+                        <option value="Delhi">Delhi</option>
+                        <option value="Hyderabad">Hyderabad</option>
+                        <option value="Kolkata">Kolkata</option>
+                        <option value="Mumbai">Mumbai</option>
+                        <option value="Pune">Pune</option>
                     </select>
                 </div>
 
